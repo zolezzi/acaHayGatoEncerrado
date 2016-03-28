@@ -1,0 +1,5 @@
+package testDominio
+
+class TestJugador {
+	
+}
