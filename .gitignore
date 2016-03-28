@@ -5,3 +5,6 @@
 /tp-grupo4/.classpath
 /tp-grupo4/.project
 /target/
+.classpath
+.project
+.settings
