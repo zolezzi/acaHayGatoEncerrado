@@ -8,12 +8,18 @@ class AccionDeAgarrarUnItem extends Accion{
 	Item itemAgarrable
 	
 	new(String nombreItem) {
+		if(esUnNombreValido(nombreItem)){
+			this.nombre = "Agarrar " + nombreItem
+			itemAgarrable = new Item =>[nombre = nombreItem]
+		}else{
+			throw new Exception("nombre de Item invalido")
+		}
 		
-		this.nombre = "Agarrar " + nombreItem
-		itemAgarrable = new Item => [
-			nombre = nombreItem
-		]
 	}
+	
+	def esUnNombreValido(String nombreItem) {
+		!nombreItem.empty && !nombreItem.toCharArray.get(0).equals(" ")}
+	
 	
 	override accionar(Jugador jugador) {
 		jugador.inventario.agregar(itemAgarrable)

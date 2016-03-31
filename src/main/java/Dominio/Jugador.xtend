@@ -6,7 +6,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 class Jugador {
 	
 	Inventario inventario
-	ServidorDeLaberintos servidorDeLaberintos
+	public ServidorDeLaberintos servidorDeLaberintos
 	Habitacion habitacionActual
 	
 
@@ -26,7 +26,7 @@ class Jugador {
 	def getAcciones(){
 		habitacionActual.getAcciones
 	}
-
+	
 	def hacerAccion(Accion accion){
 		accion.accionar(this)
 	}

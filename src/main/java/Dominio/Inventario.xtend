@@ -12,9 +12,7 @@ class Inventario {
 	def agregar(Item item){
 		if(this.chequearEspacioDisponible){
 			items.add(item)
-		} else {
-			throw new Exception ("Inventario Lleno. No se puede agarrar " + item.nombre)
-		}
+		}	
 	} 
 	
 	def chequearEspacioDisponible(){
@@ -23,5 +21,6 @@ class Inventario {
 
 	def quitar(Item item){
 		items.remove(item)
-	}	
+	}
+	
 }

@@ -13,8 +13,17 @@ class Laberinto {
 	Jugador jugadorActual
 	
 	new (String nombre){
-		this.nombre = nombre
-		this.disponibilidad = false
+		if(esUnLaberintoValido(nombre)){
+			this.nombre = nombre
+			this.disponibilidad = false
+		} else{
+			throw new Exception("Nombre de Laberinto invalido")
+		  }
+}
+
+	
+	def esUnLaberintoValido(String nombreLaberinto) {
+		!nombreLaberinto.empty && !nombreLaberinto.toCharArray.get(0).equals(" ")
 	}
 	
 	def estaDisponible() {
