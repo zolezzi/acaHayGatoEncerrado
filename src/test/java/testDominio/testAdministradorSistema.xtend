@@ -6,7 +6,9 @@ import org.junit.Test
 import org.junit.Assert
 import Dominio.Laberinto
 import Dominio.Habitacion
+import org.eclipse.xtend.lib.annotations.Accessors
 
+@Accessors
 class testAdministradorSistema {
 	
 	AdministradorSistema administrador

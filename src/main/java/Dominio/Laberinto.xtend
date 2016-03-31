@@ -7,7 +7,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 @Accessors
 class Laberinto {
 	
-	List<Habitacion> habitaciones = new ArrayList<Habitacion>
+	public List<Habitacion> habitaciones = new ArrayList<Habitacion>
 	String nombre
 	Boolean disponibilidad
 	Jugador jugadorActual
