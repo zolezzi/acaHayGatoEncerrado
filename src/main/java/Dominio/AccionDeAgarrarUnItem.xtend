@@ -10,7 +10,9 @@ class AccionDeAgarrarUnItem extends Accion{
 	new(String nombreItem) {
 		
 		this.nombre = "Agarrar " + nombreItem
-		itemAgarrable = new Item(nombreItem)
+		itemAgarrable = new Item => [
+			nombre = nombreItem
+		]
 	}
 	
 	override accionar(Jugador jugador) {
