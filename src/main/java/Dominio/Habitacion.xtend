@@ -13,8 +13,17 @@ class Habitacion {
 	List<Accion> acciones = new ArrayList<Accion>
 	
 	new (String nombre){
-		this.nombre = nombre
-		esFinal = false
-		esInicial = false
+		if(esUnaHabitacionValida(nombre)){
+			this.nombre = nombre
+			esFinal = false
+			esInicial = false
+		} else{
+			throw new Exception("Nombre de Habitacion invalido")
+		  }
+}
+
+	
+	def esUnaHabitacionValida(String nombreHabitacion) {
+		!nombreHabitacion.empty && !nombreHabitacion.toCharArray.get(0).equals(" ")
 	}
 }
