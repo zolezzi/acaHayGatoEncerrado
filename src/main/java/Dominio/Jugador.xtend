@@ -36,11 +36,7 @@ class Jugador {
 	}
 	
 	def tiene(Item item) {
-		var cond = false
-		for(elemento : inventario.items){
-			cond = cond || item.nombre == elemento.nombre
-		}
-		return cond
+		return inventario.items.exists[it | it.nombre == item.nombre]
 	}
 	
 	def quitar(Item item) {
@@ -51,3 +47,4 @@ class Jugador {
 		}
 	}
 }
+
