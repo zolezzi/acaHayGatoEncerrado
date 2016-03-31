@@ -41,4 +41,15 @@ class TestJugador {
 		
 	}
 	
+	@Test
+	def testDadoUnJugadorSeteoSuHabitacionHabitacionActual(){
+		habitacionActual = new Habitacion("Cocina")
+		jugador.habitacionInicial = habitacionActual
+		
+		Assert.assertEquals(jugador.habitacionActual.nombre, "Cocina")
+	}
+	
+	@Test
+	def test(){}
+		
 }
