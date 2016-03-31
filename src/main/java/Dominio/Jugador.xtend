@@ -26,7 +26,7 @@ class Jugador {
 	def getAcciones(){
 		habitacionActual.getAcciones
 	}
-	
+
 	def hacerAccion(Accion accion){
 		accion.accionar(this)
 	}

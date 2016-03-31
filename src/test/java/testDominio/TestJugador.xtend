@@ -37,7 +37,7 @@ class TestJugador {
 		jugador.servidorDeLaberintos = servidorDeLaberintos
 		servidorDeLaberintos.laberintos.add(laberinto1)
 		
-		Assert
+		Assert.assertEquals(jugador.servidorDeLaberintos.laberintos.size,1)
 		
 	}
 	
