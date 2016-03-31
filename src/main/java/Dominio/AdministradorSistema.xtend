@@ -2,7 +2,9 @@ package Dominio
 
 import java.util.List
 import java.util.ArrayList
+import org.eclipse.xtend.lib.annotations.Accessors
 
+@Accessors
 class AdministradorSistema {
 	
 	List<Laberinto> laberintos = new ArrayList<Laberinto>
@@ -28,18 +30,18 @@ class AdministradorSistema {
 		laberinto.habitaciones.remove(habitacion)
 	}
 	
-	def clikearHabitacionComoFinal(Habitacion habitacion){
+	def marcarHabitacionComoFinal(Habitacion habitacion){
 		if(!habitacion.esInicial){
 			habitacion.esFinal = !habitacion.esFinal
 		}
 	}
 
-	def clikearHabitacionComoInicial(Habitacion habitacion){
+	def marcarHabitacionComoInicial(Habitacion habitacion){
 		if(!habitacion.esFinal){
 			habitacion.esInicial = !habitacion.esInicial
 		}
 	}
-	
+
 	def habilitar(Laberinto laberinto){
 		laberinto.chequearInicioYFinal
 	}
@@ -56,7 +58,6 @@ class AdministradorSistema {
 		var accionAgarrarItem = new AccionDeAgarrarUnItem(nombreItem)
 		habitacion.acciones.add(accionAgarrarItem)	
 	}
-
 
 	def crearAccionDeUsarItem(Laberinto laberinto, Habitacion habitacion,Item item, Accion accion){
 		

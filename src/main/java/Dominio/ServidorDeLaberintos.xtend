@@ -11,13 +11,14 @@ class ServidorDeLaberintos {
 	List<Laberinto> laberintos = new ArrayList<Laberinto>
 	
 	
-	def laberintosDisponibles(){
-		var List<Laberinto> laberintosDisponibles = new ArrayList<Laberinto>()
+	def List<Laberinto> laberintosDisponibles(){
+		var List<Laberinto> laberintos = new ArrayList<Laberinto>()
+		
 		for (laberinto : laberintos){
 			if(laberinto.estaDisponible()){
-				laberintosDisponibles.add(laberinto)
+				laberintos.add(laberinto)
 			}
 		}
-		return (laberintosDisponibles)
+		return (laberintos)
 	}	
 }
