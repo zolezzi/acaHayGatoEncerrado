@@ -7,6 +7,9 @@ import org.junit.Assert
 import Dominio.Laberinto
 import Dominio.Habitacion
 import org.eclipse.xtend.lib.annotations.Accessors
+import Dominio.Item
+import Dominio.Accion
+import Dominio.AccionDeIrHabitacion
 
 @Accessors
 class testAdministradorSistema {
@@ -15,6 +18,9 @@ class testAdministradorSistema {
 	Laberinto nostromo
 	Habitacion comedor
 	Habitacion capsulaDeEscape
+	Habitacion puerto
+	Item servilleta
+	Accion irACapsula
 	
 	@Before
 	def void setUp(){
@@ -40,6 +46,21 @@ class testAdministradorSistema {
 		capsulaDeEscape = nostromo.habitaciones.get(1)
 	}
 
+	def administradorConUnLaberintoHabilitadoConDosHabitaciones(){
+		
+		this.administradorConUnLaberintoConDosHabitaciones
+		administrador.marcarHabitacionComoInicial(comedor)
+		administrador.marcarHabitacionComoFinal(capsulaDeEscape)
+		administrador.habilitar(nostromo)
+	}
+	
+	def administradorConUnLaberintoHabilitadoConTresHabitaciones(){
+		
+		this.administradorConUnLaberintoHabilitadoConDosHabitaciones
+		administrador.agregarHabitacion(nostromo,"Puerto")
+		puerto = nostromo.habitaciones.get(2)
+	}
+	
 	@Test
 	def testAdministradorSistemaCreaUnLaberintoEntoncesTieneUnLaberinto(){
 		
@@ -86,20 +107,48 @@ class testAdministradorSistema {
 	@Test
 	def testAdministradorSistemaConUnLaberintoConDosHabitacionesMarcaAUnaComoInicialYOtraComoFinalYLuegoHabilitaElLaberintoEntoncesElLaberintoEstaDisponible(){
 		
-		this.administradorConUnLaberintoConDosHabitaciones
-		administrador.marcarHabitacionComoInicial(comedor)
-		administrador.marcarHabitacionComoFinal(capsulaDeEscape)
-		administrador.habilitar(nostromo)
+		this.administradorConUnLaberintoHabilitadoConDosHabitaciones
 		
 		Assert.assertTrue(nostromo.estaDisponible)
 	}
 	
 	@Test
-	def testAdministradoSistemaConUnLaberintoConDosHabitacionesHabilitaElLaberintoEntoncesElLaberintoNoEstaDisponible(){
+	def testAdministradorSistemaConUnLaberintoConDosHabitacionesHabilitaElLaberintoEntoncesElLaberintoNoEstaDisponible(){
 		
 		this.administradorConUnLaberintoConDosHabitaciones
 		administrador.habilitar(nostromo)
 		
 		Assert.assertFalse(nostromo.estaDisponible)
+	}
+
+	//Testeo Creación de Acciones
+	@Test
+	def testAdministradorSistemaConUnLaberintoHabilitadoConTresHabitacionesAgregaDosAccionesEnLaHabitacionInicial(){
+		
+		this.administradorConUnLaberintoHabilitadoConTresHabitaciones
+		administrador.crearAccionDeIrAOtraHabitacion(nostromo,comedor,puerto)
+		administrador.crearAccionDeAgarrarUnElemento(nostromo,comedor,"Servilleta con contraseña escrita")
+		
+		Assert.assertEquals(comedor.acciones.size,2)
+		Assert.assertEquals(comedor.acciones.get(0).nombre,"Ir a Puerto")
+		Assert.assertEquals(comedor.acciones.get(1).nombre,"Agarrar Servilleta con contraseña escrita")
+	}
+	
+	@Test
+	def testAdministradorSistemaConLaberintoHabilitadoConTresHabitacionesAgregaDosAccionesEnLaHabitacionInicialYUnaDeUsarUnItemEnOtraHabitacion(){
+		
+		this.administradorConUnLaberintoHabilitadoConTresHabitaciones
+		administrador.crearAccionDeIrAOtraHabitacion(nostromo,comedor,puerto)
+		administrador.crearAccionDeAgarrarUnElemento(nostromo,comedor,"Servilleta con contraseña escrita")
+		servilleta = comedor.acciones.get(1).itemAgarrable
+		
+		irACapsula = new AccionDeIrHabitacion(capsulaDeEscape)
+		
+		administrador.crearAccionDeIrAOtraHabitacion(nostromo,puerto,comedor)
+		administrador.crearAccionDeUsarItem(nostromo,puerto,servilleta,irACapsula)
+		
+		Assert.assertEquals(puerto.acciones.size,2)
+		Assert.assertEquals(puerto.acciones.get(0).nombre,"Ir a Comedor")
+		Assert.assertEquals(puerto.acciones.get(1).nombre,"Usar Servilleta con contraseña escrita para Ir a Capsula de Escape")
 	}
 }
