@@ -6,7 +6,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 class Jugador {
 	
 	Inventario inventario
-	ServidorDeLaberintos servidorDeLaberintos
+	public ServidorDeLaberintos servidorDeLaberintos
 	Habitacion habitacionActual
 	
 

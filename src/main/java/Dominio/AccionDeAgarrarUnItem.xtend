@@ -10,7 +10,7 @@ class AccionDeAgarrarUnItem extends Accion{
 	new(String nombreItem) {
 		if(esUnNombreValido(nombreItem)){
 			this.nombre = "Agarrar " + nombreItem
-			itemAgarrable = new Item(nombreItem)
+			itemAgarrable = new Item =>[nombre = nombreItem]
 		}else{
 			throw new Exception("nombre de Item invalido")
 		}
