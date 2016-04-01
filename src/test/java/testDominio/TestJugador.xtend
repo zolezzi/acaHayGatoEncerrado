@@ -83,6 +83,8 @@ class TestJugador {
 		Assert.assertTrue(jugador.tiene(item))
 	}
 	
+	//CHEQUEAR PROBLEMA INVENTARIO CON UN SOLO ITEM y QUITAR
+	
 		@Test
 	def testUnJugadorQueTieneUnInventarioConDosItemsCuandoLeSacoUnoQueda1(){
 		item = new Item => [nombre = "Escalera"]
@@ -93,7 +95,6 @@ class TestJugador {
 		jugador.quitar(item)
 		
 		
-		Assert.assertEquals(jugador.inventario.items.size, 1)
-	}
-		
+		Assert.assertEquals(jugador.inventario.items.size, 0)
+	}	
 }
