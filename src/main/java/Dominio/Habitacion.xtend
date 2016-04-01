@@ -17,13 +17,12 @@ class Habitacion {
 			this.nombre = nombre
 			esFinal = false
 			esInicial = false
-		} else{
+		} else {
 			throw new Exception("Nombre de Habitacion invalido")
-		  }
+		}
 }
-
 	
 	def esUnaHabitacionValida(String nombreHabitacion) {
-		!nombreHabitacion.empty && !nombreHabitacion.toCharArray.get(0).equals(" ")
+		!nombreHabitacion.empty && !nombreHabitacion.charAt(0).equals(" ")
 	}
 }
