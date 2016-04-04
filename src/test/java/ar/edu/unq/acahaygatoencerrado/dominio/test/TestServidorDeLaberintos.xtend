@@ -1,12 +1,11 @@
-package testDominio
+package ar.edu.unq.acahaygatoencerrado.dominio.test
 
 import org.junit.Test
 import org.junit.Before
-import Dominio.ServidorDeLaberintos
 import org.junit.Assert
-import Dominio.Laberinto
-import Dominio.AdministradorSistema
-
+import ar.edu.unq.acahaygatoencerrado.dominio.ServidorDeLaberintos
+import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
+import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 
 class TestServidorDeLaberintos {
 

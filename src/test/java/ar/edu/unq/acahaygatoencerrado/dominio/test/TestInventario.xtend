@@ -1,12 +1,12 @@
-package testDominio
+package ar.edu.unq.acahaygatoencerrado.dominio.test
 
 import org.junit.Before
-import Dominio.Inventario
 import org.junit.Test
 import org.junit.Assert
-import Dominio.Item
 import org.junit.Rule
 import org.junit.rules.ExpectedException
+import ar.edu.unq.acahaygatoencerrado.dominio.Inventario
+import ar.edu.unq.acahaygatoencerrado.dominio.Item
 
 class TestInventario {
 	

@@ -1,15 +1,16 @@
-package testDominio
+package ar.edu.unq.acahaygatoencerrado.dominio.test
 
-import Dominio.AccionDeAgarrarUnItem
-import Dominio.AccionDeIrHabitacion
-import Dominio.AccionDeUsarUnItem
-import Dominio.Habitacion
-import Dominio.Inventario
-import Dominio.Item
-import Dominio.Jugador
+
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
+import ar.edu.unq.acahaygatoencerrado.dominio.AccionDeUsarUnItem
+import ar.edu.unq.acahaygatoencerrado.dominio.AccionDeAgarrarUnItem
+import ar.edu.unq.acahaygatoencerrado.dominio.Item
+import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
+import ar.edu.unq.acahaygatoencerrado.dominio.AccionDeIrHabitacion
+import ar.edu.unq.acahaygatoencerrado.dominio.Jugador
+import ar.edu.unq.acahaygatoencerrado.dominio.Inventario
 
 class TestAccionDeUsarUnItem {
 	
@@ -79,3 +80,4 @@ class TestAccionDeUsarUnItem {
 		Assert.assertTrue(jugador.inventario.items.contains(agarrarLenha.itemAgarrable()))
 	}
 }
+	

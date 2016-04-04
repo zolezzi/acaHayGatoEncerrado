@@ -1,15 +1,15 @@
-package testDominio
+package ar.edu.unq.acahaygatoencerrado.dominio.test
 
 import org.junit.Before
-import Dominio.AdministradorSistema
 import org.junit.Test
 import org.junit.Assert
-import Dominio.Laberinto
-import Dominio.Habitacion
 import org.eclipse.xtend.lib.annotations.Accessors
-import Dominio.Item
-import Dominio.Accion
-import Dominio.AccionDeIrHabitacion
+import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
+import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
+import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
+import ar.edu.unq.acahaygatoencerrado.dominio.Item
+import ar.edu.unq.acahaygatoencerrado.dominio.Accion
+import ar.edu.unq.acahaygatoencerrado.dominio.AccionDeIrHabitacion
 
 @Accessors
 class testAdministradorSistema {
@@ -152,3 +152,4 @@ class testAdministradorSistema {
 		Assert.assertEquals(puerto.acciones.get(1).nombre,"Usar Servilleta con contraseña escrita para Ir a Capsula de Escape")
 	}
 }
+		

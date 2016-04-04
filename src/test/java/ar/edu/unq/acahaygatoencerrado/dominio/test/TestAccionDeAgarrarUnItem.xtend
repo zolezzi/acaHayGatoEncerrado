@@ -1,14 +1,14 @@
-package testDominio
+package ar.edu.unq.acahaygatoencerrado.dominio.test
 
 import org.junit.Rule
 import org.junit.rules.ExpectedException
 import org.junit.Test
-import Dominio.AccionDeAgarrarUnItem
 import org.junit.Assert
 import org.junit.Before
-import Dominio.Jugador
-import Dominio.Inventario
-import Dominio.Habitacion
+import ar.edu.unq.acahaygatoencerrado.dominio.AccionDeAgarrarUnItem
+import ar.edu.unq.acahaygatoencerrado.dominio.Jugador
+import ar.edu.unq.acahaygatoencerrado.dominio.Inventario
+import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
 
 class TestAccionDeAgarrarUnItem {
 	

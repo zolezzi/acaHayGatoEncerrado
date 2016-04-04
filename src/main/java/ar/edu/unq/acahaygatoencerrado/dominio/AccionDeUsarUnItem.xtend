@@ -1,4 +1,4 @@
-package Dominio
+package ar.edu.unq.acahaygatoencerrado.dominio
 
 
 class AccionDeUsarUnItem extends Accion {

@@ -1,11 +1,12 @@
-package testDominio
+package ar.edu.unq.acahaygatoencerrado.dominio.test
 
 import org.junit.Test
-import Dominio.AccionDeIrHabitacion
-import Dominio.Jugador
-import Dominio.Habitacion
+
 import org.junit.Before
 import org.junit.Assert
+import ar.edu.unq.acahaygatoencerrado.dominio.AccionDeIrHabitacion
+import ar.edu.unq.acahaygatoencerrado.dominio.Jugador
+import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
 
 class TestAccionDeIrHabitacion {
 	

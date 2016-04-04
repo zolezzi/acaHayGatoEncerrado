@@ -1,13 +1,14 @@
-package testDominio
+package ar.edu.unq.acahaygatoencerrado.dominio.test
 
-import Dominio.Laberinto
+
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import Dominio.Habitacion
 import org.junit.Rule
 import org.junit.rules.ExpectedException
-import Dominio.AdministradorSistema
+import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
+import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
+import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 
 class TestLaberinto {
 

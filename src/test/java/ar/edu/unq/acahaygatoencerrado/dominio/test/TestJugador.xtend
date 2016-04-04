@@ -1,14 +1,15 @@
-package testDominio
+package ar.edu.unq.acahaygatoencerrado.dominio.test
 
-import Dominio.Inventario
-import Dominio.ServidorDeLaberintos
-import Dominio.Habitacion
-import Dominio.Laberinto
+
 import org.junit.Test
 import org.junit.Before
-import Dominio.Jugador
 import org.junit.Assert
-import Dominio.Item
+import ar.edu.unq.acahaygatoencerrado.dominio.Inventario
+import ar.edu.unq.acahaygatoencerrado.dominio.Jugador
+import ar.edu.unq.acahaygatoencerrado.dominio.Item
+import ar.edu.unq.acahaygatoencerrado.dominio.ServidorDeLaberintos
+import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
+import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
 
 class TestJugador {
 	

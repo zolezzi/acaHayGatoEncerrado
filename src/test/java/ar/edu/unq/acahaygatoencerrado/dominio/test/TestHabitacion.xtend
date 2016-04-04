@@ -1,10 +1,10 @@
-package testDominio
+package ar.edu.unq.acahaygatoencerrado.dominio.test
 
 import org.junit.Rule
 import org.junit.rules.ExpectedException
 import org.junit.Test
-import Dominio.Habitacion
 import org.junit.Assert
+import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
 
 class TestHabitacion {
 	
