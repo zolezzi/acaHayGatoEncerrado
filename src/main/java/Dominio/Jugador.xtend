@@ -11,7 +11,7 @@ class Jugador {
 	
 
 	def solicitarLaberintos(){
-		servidorDeLaberintos.laberintosDisponibles()
+		servidorDeLaberintos.getLaberintosDisponibles()
 	}
 	
 	def jugarLaberinto(Laberinto laberinto){

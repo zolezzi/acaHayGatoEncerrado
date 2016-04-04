@@ -27,7 +27,7 @@ class Laberinto {
 	}
 	
 	def estaDisponible() {
-		this.disponibilidad
+		return this.disponibilidad
 	}
 	
 	def inicializarPartida(Jugador jugador) {
