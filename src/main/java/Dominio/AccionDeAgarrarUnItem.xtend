@@ -12,7 +12,7 @@ class AccionDeAgarrarUnItem extends Accion{
 			this.nombre = "Agarrar " + nombreItem
 			itemAgarrable = new Item =>[nombre = nombreItem]
 		}else{
-			throw new Exception("nombre de Item invalido")
+			throw new Exception("Nombre de Item invalido")
 		}
 		
 	}
