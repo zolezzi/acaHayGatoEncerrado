@@ -26,4 +26,8 @@ class AccionDeUsarUnItem extends Accion {
 		}
 		jugador.habitacionActual.acciones.remove(this)
 	}
+	
+	override itemAgarrable(){
+		accion.itemAgarrable()
+	}
 }

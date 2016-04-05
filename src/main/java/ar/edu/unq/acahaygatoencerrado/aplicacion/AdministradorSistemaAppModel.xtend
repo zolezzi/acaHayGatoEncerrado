@@ -5,6 +5,7 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
 import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 import ar.edu.unq.acahaygatoencerrado.dominio.Item
 import ar.edu.unq.acahaygatoencerrado.dominio.Accion
+import java.util.List
 
 class AdministradorSistemaAppModel {
 	
@@ -84,5 +85,42 @@ class AdministradorSistemaAppModel {
 	
 	def quitarAccion(){
 		administrador.eliminarAccion(laberintoSeleccionado,habitacionSeleccionada,accionSeleccionada)
+	}
+	
+	def setAccionSeleccionada(Accion accion){
+		accionSeleccionada = accion
+	}
+	
+	def getHabitacionesALaCualIr(){
+		laberintoSeleccionado.habitaciones
+	}
+	
+	def getItemsQuePuedenSerUsados(){
+
+		var todasLasHabitacionesDeUnLaberinto = laberintoSeleccionado.habitaciones
+		
+		todosLosItemsAgarrablesDeUnLaberinto
+			(todasLasAccionesDelLaberintoSeleccionado(todasLasHabitacionesDeUnLaberinto)
+			)
+	}
+	
+	private def todosLosItemsAgarrablesDeUnLaberinto(List<Accion> acciones){
+		
+		var List<Item> todosLosItemsAgarrablesDeUnLaberinto
+		
+		for(accion : acciones){
+			todosLosItemsAgarrablesDeUnLaberinto.add(accion.itemAgarrable())
+		}
+		todosLosItemsAgarrablesDeUnLaberinto
+	}
+	
+	private def todasLasAccionesDelLaberintoSeleccionado(List<Habitacion> habitaciones){
+		
+		var List<Accion> todasLasAccionesDeUnLaberinto
+		
+		for(habitacion : habitaciones){
+			todasLasAccionesDeUnLaberinto.addAll(habitacion.acciones)
+		}
+		todasLasAccionesDeUnLaberinto
 	}
 }
