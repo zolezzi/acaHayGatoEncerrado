@@ -6,7 +6,11 @@ import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 import ar.edu.unq.acahaygatoencerrado.dominio.Item
 import ar.edu.unq.acahaygatoencerrado.dominio.Accion
 import java.util.List
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
+@Observable
+@Accessors
 class AdministradorSistemaAppModel {
 	
 	AdministradorSistema administrador

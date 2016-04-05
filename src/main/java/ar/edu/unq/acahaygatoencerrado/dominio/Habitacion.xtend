@@ -3,7 +3,9 @@ package ar.edu.unq.acahaygatoencerrado.dominio
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.ArrayList
 import java.util.List
+import org.uqbar.commons.utils.Observable
 
+@Observable
 @Accessors
 class Habitacion {
 	

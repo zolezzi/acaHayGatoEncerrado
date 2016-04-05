@@ -3,7 +3,9 @@ package ar.edu.unq.acahaygatoencerrado.dominio
 import java.util.List
 import java.util.ArrayList
 import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
+@Observable
 @Accessors
 class AdministradorSistema {
 	
