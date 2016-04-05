@@ -64,4 +64,9 @@ class AdministradorSistema {
 		var accionUsarItem = new AccionDeUsarUnItem(item, accion)
 		habitacion.acciones.add(accionUsarItem)
 	}
+	
+	def eliminarAccion(Laberinto laberinto, Habitacion habitacion, Accion accion){
+		
+		habitacion.acciones.remove(accion)
+	}
 }

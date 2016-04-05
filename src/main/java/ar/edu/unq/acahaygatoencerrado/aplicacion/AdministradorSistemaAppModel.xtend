@@ -7,13 +7,14 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Item
 import ar.edu.unq.acahaygatoencerrado.dominio.Accion
 
 class AdministradorSistemaAppModel {
+	
 	AdministradorSistema administrador
 	Laberinto laberintoSeleccionado
 	Habitacion habitacionSeleccionada
 	Habitacion habitacionParaAgregarAccion
 	Item itemSeleccionadoParaAgregarAccion
 	Accion accionSeleccionadaParaAgregarAccion
-	
+	Accion accionSeleccionada
 	
 	def getLaberintos(){
 		return administrador.laberintos
@@ -24,11 +25,11 @@ class AdministradorSistemaAppModel {
 	}
 	
 	def quitarLaberinto(){
-		administrador.eliminarLaberinto(this.laberintoSeleccionado)
+		administrador.eliminarLaberinto(laberintoSeleccionado)
 	}
 	
 	def setLaberintoSeleccionado(Laberinto laberinto){
-		this.laberintoSeleccionado = laberinto
+		laberintoSeleccionado = laberinto
 	}
 	
 	def getHabitacionesDelLaberintoSeleccionado(){
@@ -36,27 +37,27 @@ class AdministradorSistemaAppModel {
 	}
 	
 	def agregarHabitacion(String nombreHabitacion){
-		administrador.agregarHabitacion(this.laberintoSeleccionado, nombreHabitacion)
+		administrador.agregarHabitacion(laberintoSeleccionado, nombreHabitacion)
 	}
 	
 	def quitarHabitacion(){
-		administrador.eliminarHabitacion(this.laberintoSeleccionado, this.habitacionSeleccionada)		
+		administrador.eliminarHabitacion(laberintoSeleccionado, habitacionSeleccionada)		
 	}
 	
 	def setHabitacionSeleccionada(Habitacion habitacion){
-		this.habitacionSeleccionada = habitacion
+		habitacionSeleccionada = habitacion
 	}
 	
 	def getEsHabitacionInicial(){
-		return this.habitacionSeleccionada.esInicial
+		return habitacionSeleccionada.esInicial
 	}
 	
 	def getEsHabitacionFinal(){
-		return this.habitacionSeleccionada.esFinal
+		return habitacionSeleccionada.esFinal
 	}
 	
 	def getAccionesDeHabitacionSeleccionada(){
-		return this.habitacionSeleccionada.acciones
+		return habitacionSeleccionada.acciones
 	}
 	
 	def agregarAccionDeIrAHabitacionALaHabitacionSeleccionada(){
@@ -81,4 +82,7 @@ class AdministradorSistemaAppModel {
 		administrador.marcarHabitacionComoFinal(habitacionSeleccionada)
 	}
 	
+	def quitarAccion(){
+		administrador.eliminarAccion(laberintoSeleccionado,habitacionSeleccionada,accionSeleccionada)
+	}
 }
