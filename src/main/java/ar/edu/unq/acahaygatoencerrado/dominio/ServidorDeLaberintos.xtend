@@ -6,32 +6,22 @@ import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 class ServidorDeLaberintos {
-	
 	List<AdministradorSistema> administradores = new ArrayList<AdministradorSistema>
 	List<Laberinto> laberintos = new ArrayList<Laberinto>
 	
-	
-	def List<Laberinto> getLaberintosDisponibles(){
-		var List<Laberinto> laberintos = new ArrayList<Laberinto>()
-		laberintos = this.getTodoLosLaberinto()		
+	def getLaberintosDisponibles() {
 		this.filtarLaberintoDisponibles()
-		return (laberintos)
+		this.getTodosLosLaberintos()
 	}	
 	
-	def List<Laberinto> getTodoLosLaberinto(){
-		for(administrador : administradores){
-			laberintos.addAll(administrador.laberintos)
-		}
-		return laberintos
+	// No entendi bien que es lo q hace pero asi queda mas Xtend
+	// se puede retornar solo [administradores.forEach(admin | laberintos.addAll(admin.laberintos))] pero me parecio mas claro poner laberintos
+	def getTodosLosLaberintos() {
+		administradores.forEach(admin | laberintos.addAll(admin.laberintos))
+			laberintos
 	}
 
-	def List<Laberinto> filtarLaberintoDisponibles(){
-		var List<Laberinto> list
-		for(laberinto : laberintos){
-			if(laberinto.disponibilidad){
-				list.add(laberinto)
-			}
-		}
-		return list
+	def filtarLaberintoDisponibles() {
+		laberintos.filter[it.disponibilidad]
 	}
 }
