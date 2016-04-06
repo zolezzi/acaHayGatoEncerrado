@@ -9,66 +9,51 @@ import org.uqbar.commons.utils.Observable
 @Accessors
 class AdministradorSistema {
 	
-	List<Laberinto> laberintos = new ArrayList<Laberinto>
+	ArrayList<Laberinto> laberintos = new ArrayList<Laberinto>
 	
-	def crearLaberinto (String nombreLaberinto){
-		
-		var laberinto = new Laberinto(nombreLaberinto)
-		laberintos.add(laberinto)	
+	def crearLaberinto(String nombreLaberinto) {
+		laberintos.add(new Laberinto(nombreLaberinto))	
 	}
 	
-	def eliminarLaberinto(Laberinto laberinto){
-		
+	def eliminarLaberinto(Laberinto laberinto) {
 		laberintos.remove(laberinto)	
 	}
 	
-	def agregarHabitacion(Laberinto laberinto, String nombreHabitacion){
-		
-		var habitacion = new Habitacion(nombreHabitacion)
-		laberinto.habitaciones.add(habitacion)	
+	def agregarHabitacion(Laberinto laberinto, String nombreHabitacion) {
+		laberinto.habitaciones.add(new Habitacion(nombreHabitacion))	
 	}
 	
-	def eliminarHabitacion (Laberinto laberinto, Habitacion habitacion){
+	def eliminarHabitacion(Laberinto laberinto, Habitacion habitacion) {
 		laberinto.habitaciones.remove(habitacion)
 	}
 	
-	def marcarHabitacionComoFinal(Habitacion habitacion){
-		if(!habitacion.esInicial){
-			habitacion.esFinal = !habitacion.esFinal
-		}
+	// si le paso una habitacion que es final termino cambiandola a final cuando no deberia
+	def marcarHabitacionComoFinal(Habitacion habitacion) {
+		if(!habitacion.esInicial) habitacion.esFinal = !habitacion.esFinal
 	}
 
-	def marcarHabitacionComoInicial(Habitacion habitacion){
-		if(!habitacion.esFinal){
-			habitacion.esInicial = !habitacion.esInicial
-		}
+	// si le paso una habitacion que es inicial termino cambiandola a final cuando no deberia, el problema viene de usar dos o mas veces el mismo metodo en una habitacion, en ese caso no seria necesario el if
+	def marcarHabitacionComoInicial(Habitacion habitacion) {
+		if(!habitacion.esFinal) habitacion.esInicial = ! habitacion.esInicial
 	}
 
-	def habilitar(Laberinto laberinto){
+	def habilitar(Laberinto laberinto) {
 		laberinto.chequearInicioYFinal
 	}
 	
-	def crearAccionDeIrAOtraHabitacion (Laberinto laberinto, Habitacion habitacionActual,
-		Habitacion habitacionAlaQueMeDirijo) {
-	
-		var accionDeIrAOtraHabitacion = new AccionDeIrHabitacion(habitacionAlaQueMeDirijo)
-		habitacionActual.acciones.add(accionDeIrAOtraHabitacion)
+	def crearAccionDeIrAOtraHabitacion (Laberinto laberinto, Habitacion habitacionActual, Habitacion habitacionAlaQueMeDirijo) {	
+		habitacionActual.acciones.add(new AccionDeIrHabitacion(habitacionAlaQueMeDirijo))
 	}
 	
-	def crearAccionDeAgarrarUnElemento (Laberinto laberinto,Habitacion habitacion, String nombreItem){
-		
-		var accionAgarrarItem = new AccionDeAgarrarUnItem(nombreItem)
-		habitacion.acciones.add(accionAgarrarItem)	
+	def crearAccionDeAgarrarUnElemento(Laberinto laberinto, Habitacion habitacion, String nombreItem) {
+		habitacion.acciones.add(new AccionDeAgarrarUnItem(nombreItem))	
 	}
 
-	def crearAccionDeUsarItem(Laberinto laberinto, Habitacion habitacion,Item item, Accion accion){
-		
-		var accionUsarItem = new AccionDeUsarUnItem(item, accion)
-		habitacion.acciones.add(accionUsarItem)
+	def crearAccionDeUsarItem(Laberinto laberinto, Habitacion habitacion, Item item, Accion accion) {
+		habitacion.acciones.add(new AccionDeUsarUnItem(item, accion))
 	}
 	
-	def eliminarAccion(Laberinto laberinto, Habitacion habitacion, Accion accion){
-		
+	def eliminarAccion(Laberinto laberinto, Habitacion habitacion, Accion accion) {
 		habitacion.acciones.remove(accion)
 	}
 }
