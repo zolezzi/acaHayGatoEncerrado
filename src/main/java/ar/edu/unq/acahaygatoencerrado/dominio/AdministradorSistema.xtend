@@ -9,7 +9,7 @@ import org.uqbar.commons.utils.Observable
 @Accessors
 class AdministradorSistema {
 	
-	ArrayList<Laberinto> laberintos = new ArrayList<Laberinto>
+	List<Laberinto> laberintos = new ArrayList<Laberinto>
 	
 	def crearLaberinto(String nombreLaberinto) {
 		laberintos.add(new Laberinto(nombreLaberinto))	
@@ -26,15 +26,17 @@ class AdministradorSistema {
 	def eliminarHabitacion(Laberinto laberinto, Habitacion habitacion) {
 		laberinto.habitaciones.remove(habitacion)
 	}
-	
-	// si le paso una habitacion que es final termino cambiandola a final cuando no deberia
+
 	def marcarHabitacionComoFinal(Habitacion habitacion) {
-		if(!habitacion.esInicial) habitacion.esFinal = !habitacion.esFinal
+		if(!habitacion.esInicial) {
+			habitacion.esFinal = !habitacion.esFinal
+		}
 	}
 
-	// si le paso una habitacion que es inicial termino cambiandola a final cuando no deberia, el problema viene de usar dos o mas veces el mismo metodo en una habitacion, en ese caso no seria necesario el if
 	def marcarHabitacionComoInicial(Habitacion habitacion) {
-		if(!habitacion.esFinal) habitacion.esInicial = ! habitacion.esInicial
+		if(!habitacion.esFinal) {
+			habitacion.esInicial = ! habitacion.esInicial
+		}
 	}
 
 	def habilitar(Laberinto laberinto) {

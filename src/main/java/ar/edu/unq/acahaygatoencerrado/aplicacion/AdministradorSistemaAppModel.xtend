@@ -14,12 +14,19 @@ import org.uqbar.commons.utils.Observable
 class AdministradorSistemaAppModel {
 	
 	AdministradorSistema administrador
+	List<Laberinto> laberintos
 	Laberinto laberintoSeleccionado
+	List<Habitacion> habitacionesDelLaberintoSeleccionado
 	Habitacion habitacionSeleccionada
+	List<Accion> accionesDeLaHabitacionSeleccionada
 	Habitacion habitacionParaAgregarAccion
 	Item itemSeleccionadoParaAgregarAccion
 	Accion accionSeleccionadaParaAgregarAccion
 	Accion accionSeleccionada
+	
+	new (){
+		laberintos = getLaberintos
+	}
 	
 	def getLaberintos(){
 		return administrador.laberintos
@@ -35,6 +42,7 @@ class AdministradorSistemaAppModel {
 	
 	def setLaberintoSeleccionado(Laberinto laberinto){
 		laberintoSeleccionado = laberinto
+		habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado
 	}
 	
 	def getHabitacionesDelLaberintoSeleccionado(){
@@ -43,14 +51,17 @@ class AdministradorSistemaAppModel {
 	
 	def agregarHabitacion(String nombreHabitacion){
 		administrador.agregarHabitacion(laberintoSeleccionado, nombreHabitacion)
+		habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado
 	}
 	
 	def quitarHabitacion(){
-		administrador.eliminarHabitacion(laberintoSeleccionado, habitacionSeleccionada)		
+		administrador.eliminarHabitacion(laberintoSeleccionado, habitacionSeleccionada)
+		habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado	
 	}
 	
 	def setHabitacionSeleccionada(Habitacion habitacion){
 		habitacionSeleccionada = habitacion
+		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
 	}
 	
 	def getEsHabitacionInicial(){
@@ -67,17 +78,20 @@ class AdministradorSistemaAppModel {
 	
 	def agregarAccionDeIrAHabitacionALaHabitacionSeleccionada(){
 		administrador.crearAccionDeIrAOtraHabitacion(laberintoSeleccionado, habitacionSeleccionada, 
-													 habitacionParaAgregarAccion)		
+													 habitacionParaAgregarAccion)
+		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
 	}
 	
 	def agregarAccionDeAgarrarUnElemntoAHabitacionSeleccionada(String nombreItem){
-		administrador.crearAccionDeAgarrarUnElemento(laberintoSeleccionado, habitacionSeleccionada, nombreItem)		
+		administrador.crearAccionDeAgarrarUnElemento(laberintoSeleccionado, habitacionSeleccionada, nombreItem)
+		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada		
 	}
 	
 	def agregarAccionDeUsarUnItemALaHabitacionSeleccionada(){
 		administrador.crearAccionDeUsarItem(laberintoSeleccionado, habitacionSeleccionada, 
 											itemSeleccionadoParaAgregarAccion, 
-											accionSeleccionadaParaAgregarAccion)	
+											accionSeleccionadaParaAgregarAccion)
+		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada	
 	}
 	def marcarHabitacionComoInicial(){
 		administrador.marcarHabitacionComoInicial(habitacionSeleccionada)
@@ -89,6 +103,7 @@ class AdministradorSistemaAppModel {
 	
 	def quitarAccion(){
 		administrador.eliminarAccion(laberintoSeleccionado,habitacionSeleccionada,accionSeleccionada)
+		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
 	}
 	
 	def setAccionSeleccionada(Accion accion){
