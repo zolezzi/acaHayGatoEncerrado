@@ -25,6 +25,7 @@ class AdministradorSistemaAppModel {
 	Accion accionSeleccionada
 	
 	new (){
+		administrador = new AdministradorSistema
 		laberintos = getLaberintos
 	}
 	
