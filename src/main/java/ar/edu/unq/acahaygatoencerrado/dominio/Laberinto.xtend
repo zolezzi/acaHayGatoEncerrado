@@ -15,6 +15,11 @@ class Laberinto {
 	Boolean disponibilidad
 	Jugador jugadorActual
 	
+	new (){
+		this.disponibilidad = false
+	}
+	
+	
 	new (String nombre){
 		if(esUnLaberintoValido(nombre)){
 			this.nombre = nombre
