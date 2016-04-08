@@ -9,14 +9,16 @@ import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 @Accessors
 class CrearLaberintoAppModel {
 	Laberinto laberinto
-	AdministradorSistema administrador 
+	AdministradorSistema administrador
+	String nombreLaberinto
 	
 	new(AdministradorSistema administrador){
 		this.administrador = administrador
-		laberinto = new Laberinto
+		laberinto = new Laberinto()
 	}
 	
 	def agregarLaberinto(){
+		laberinto.nombre = nombreLaberinto
 		administrador.laberintos.add(laberinto)
 	}
 	
