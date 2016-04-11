@@ -26,11 +26,7 @@ class AdministradorSistemaAppModel {
 	
 	new (){
 		administrador = new AdministradorSistema
-		laberintos = getLaberintos
-	}
-	
-	def getLaberintos(){
-		return administrador.laberintos
+		laberintos = administrador.laberintos
 	}
 	
 	def agregar(String nombreLaberinto){
