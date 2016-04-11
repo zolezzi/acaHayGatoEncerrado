@@ -8,43 +8,35 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Accion
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
-import java.util.ArrayList
+import static org.uqbar.commons.model.ObservableUtils.*
 
 @Observable
 @Accessors
 class AdministradorSistemaAppModel {
 	
-	AdministradorSistema administrador = new AdministradorSistema
-	List<Laberinto> laberintos = new ArrayList<Laberinto>
+	AdministradorSistema administrador //= new AdministradorSistema
 	Laberinto laberintoSeleccionado
-	List<Habitacion> habitacionesDelLaberintoSeleccionado
 	Habitacion habitacionSeleccionada
-	List<Accion> accionesDeLaHabitacionSeleccionada
 	Habitacion habitacionParaAgregarAccion
 	Item itemSeleccionadoParaAgregarAccion
 	Accion accionSeleccionadaParaAgregarAccion
 	Accion accionSeleccionada
 	
-	new (){
-		
-	}
+	new (){	}
 	
 	def agregar(String nombreLaberinto){
 		administrador.crearLaberinto(nombreLaberinto)
-		laberintos = administrador.getLaberintos
 	}
 	
 	def quitarLaberinto(){
 		administrador.eliminarLaberinto(laberintoSeleccionado)
+		firePropertyChanged(this, "laberintos")
 	}
 	
-	def getLaberintos(){
-		laberintos
-	}
 	
 	def setLaberintoSeleccionado(Laberinto laberinto){
 		laberintoSeleccionado = laberinto
-		habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado
+		//habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado
 	}
 	
 	def getHabitacionesDelLaberintoSeleccionado(){
@@ -53,17 +45,17 @@ class AdministradorSistemaAppModel {
 	
 	def agregarHabitacion(String nombreHabitacion){
 		administrador.agregarHabitacion(laberintoSeleccionado, nombreHabitacion)
-		habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado
+		//habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado
 	}
 	
 	def quitarHabitacion(){
 		administrador.eliminarHabitacion(laberintoSeleccionado, habitacionSeleccionada)
-		habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado	
+		//habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado	
 	}
 	
 	def setHabitacionSeleccionada(Habitacion habitacion){
 		habitacionSeleccionada = habitacion
-		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
+		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
 	}
 	
 	def getEsHabitacionInicial(){
@@ -81,19 +73,19 @@ class AdministradorSistemaAppModel {
 	def agregarAccionDeIrAHabitacionALaHabitacionSeleccionada(){
 		administrador.crearAccionDeIrAOtraHabitacion(laberintoSeleccionado, habitacionSeleccionada, 
 													 habitacionParaAgregarAccion)
-		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
+		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
 	}
 	
 	def agregarAccionDeAgarrarUnElemntoAHabitacionSeleccionada(String nombreItem){
 		administrador.crearAccionDeAgarrarUnElemento(laberintoSeleccionado, habitacionSeleccionada, nombreItem)
-		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada		
+		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada		
 	}
 	
 	def agregarAccionDeUsarUnItemALaHabitacionSeleccionada(){
 		administrador.crearAccionDeUsarItem(laberintoSeleccionado, habitacionSeleccionada, 
 											itemSeleccionadoParaAgregarAccion, 
 											accionSeleccionadaParaAgregarAccion)
-		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada	
+		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada	
 	}
 	def marcarHabitacionComoInicial(){
 		administrador.marcarHabitacionComoInicial(habitacionSeleccionada)
@@ -105,7 +97,7 @@ class AdministradorSistemaAppModel {
 	
 	def quitarAccion(){
 		administrador.eliminarAccion(laberintoSeleccionado,habitacionSeleccionada,accionSeleccionada)
-		accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
+		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
 	}
 	
 	def setAccionSeleccionada(Accion accion){

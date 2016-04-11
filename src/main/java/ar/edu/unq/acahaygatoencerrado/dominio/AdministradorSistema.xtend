@@ -13,7 +13,7 @@ class AdministradorSistema {
 	List<Laberinto> laberintos = new ArrayList<Laberinto>
 	
 	def crearLaberinto(String nombreLaberinto) {
-		laberintos.add(new Laberinto(nombreLaberinto))	
+		agregarLaberinto(new Laberinto(nombreLaberinto))	
 	}
 	
 	def eliminarLaberinto(Laberinto laberinto) {
