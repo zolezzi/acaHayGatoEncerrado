@@ -4,6 +4,7 @@ import java.util.List
 import java.util.ArrayList
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
+import static org.uqbar.commons.model.ObservableUtils.*
 
 @Observable
 @Accessors
@@ -57,5 +58,10 @@ class AdministradorSistema {
 	
 	def eliminarAccion(Laberinto laberinto, Habitacion habitacion, Accion accion) {
 		habitacion.acciones.remove(accion)
+	}
+	
+	def agregarLaberinto(Laberinto laberinto) {
+		laberintos.add(laberinto)
+		firePropertyChanged(this, "laberintos")
 	}
 }

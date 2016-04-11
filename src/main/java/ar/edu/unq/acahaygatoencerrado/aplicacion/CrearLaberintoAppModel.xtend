@@ -19,7 +19,7 @@ class CrearLaberintoAppModel {
 	
 	def agregarLaberinto(){
 		laberinto.nombre = nombreLaberinto
-		administrador.laberintos.add(laberinto)
+		administrador.agregarLaberinto(laberinto)
 	}
 	
 	

@@ -8,13 +8,14 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Accion
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
+import java.util.ArrayList
 
 @Observable
 @Accessors
 class AdministradorSistemaAppModel {
 	
-	AdministradorSistema administrador
-	List<Laberinto> laberintos
+	AdministradorSistema administrador = new AdministradorSistema
+	List<Laberinto> laberintos = new ArrayList<Laberinto>
 	Laberinto laberintoSeleccionado
 	List<Habitacion> habitacionesDelLaberintoSeleccionado
 	Habitacion habitacionSeleccionada
@@ -25,16 +26,20 @@ class AdministradorSistemaAppModel {
 	Accion accionSeleccionada
 	
 	new (){
-		administrador = new AdministradorSistema
-		laberintos = administrador.laberintos
+		
 	}
 	
 	def agregar(String nombreLaberinto){
 		administrador.crearLaberinto(nombreLaberinto)
+		laberintos = administrador.getLaberintos
 	}
 	
 	def quitarLaberinto(){
 		administrador.eliminarLaberinto(laberintoSeleccionado)
+	}
+	
+	def getLaberintos(){
+		laberintos
 	}
 	
 	def setLaberintoSeleccionado(Laberinto laberinto){
