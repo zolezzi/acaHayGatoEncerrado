@@ -17,7 +17,8 @@ class AdministradorSistema {
 	}
 	
 	def eliminarLaberinto(Laberinto laberinto) {
-		laberintos.remove(laberinto)	
+		laberintos.remove(laberinto)
+		firePropertyChanged(this, "laberintos")	
 	}
 	
 	def agregarHabitacion(Laberinto laberinto, String nombreHabitacion) {

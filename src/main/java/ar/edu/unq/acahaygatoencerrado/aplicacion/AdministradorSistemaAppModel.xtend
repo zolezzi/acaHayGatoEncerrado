@@ -14,7 +14,7 @@ import static org.uqbar.commons.model.ObservableUtils.*
 @Accessors
 class AdministradorSistemaAppModel {
 	
-	AdministradorSistema administrador //= new AdministradorSistema
+	AdministradorSistema administrador
 	Laberinto laberintoSeleccionado
 	Habitacion habitacionSeleccionada
 	Habitacion habitacionParaAgregarAccion
@@ -30,14 +30,8 @@ class AdministradorSistemaAppModel {
 	
 	def quitarLaberinto(){
 		administrador.eliminarLaberinto(laberintoSeleccionado)
-		firePropertyChanged(this, "laberintos")
 	}
 	
-	
-	def setLaberintoSeleccionado(Laberinto laberinto){
-		laberintoSeleccionado = laberinto
-		//habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado
-	}
 	
 	def getHabitacionesDelLaberintoSeleccionado(){
 		return laberintoSeleccionado.habitaciones
