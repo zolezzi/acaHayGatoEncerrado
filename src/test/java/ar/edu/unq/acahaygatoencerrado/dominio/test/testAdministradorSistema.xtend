@@ -36,13 +36,15 @@ class testAdministradorSistema {
 	def administradorConUnLaberintoConUnaHabitacion(){
 		
 		this.administradorConUnLaberinto
-		administrador.agregarHabitacion(nostromo,"Comedor")
+		var habitacion = new Habitacion("comnedor")
+		administrador.agregarHabitacion(nostromo,habitacion)
 		comedor = nostromo.habitaciones.get(0)
 	}
 	def administradorConUnLaberintoConDosHabitaciones(){
 		
 		this.administradorConUnLaberintoConUnaHabitacion
-		administrador.agregarHabitacion(nostromo,"Capsula de Escape")
+		var habitacion = new Habitacion("Capsula de Escape")
+		administrador.agregarHabitacion(nostromo,habitacion)
 		capsulaDeEscape = nostromo.habitaciones.get(1)
 	}
 
@@ -57,7 +59,8 @@ class testAdministradorSistema {
 	def administradorConUnLaberintoHabilitadoConTresHabitaciones(){
 		
 		this.administradorConUnLaberintoHabilitadoConDosHabitaciones
-		administrador.agregarHabitacion(nostromo,"Puerto")
+		var habitacion = new Habitacion("Puerto")
+		administrador.agregarHabitacion(nostromo,habitacion)
 		puerto = nostromo.habitaciones.get(2)
 	}
 	
