@@ -23,7 +23,6 @@ class AdministradorSistemaAppModel {
 	Accion accionSeleccionada
 	
 	new (){	}
-	
 	def agregar(String nombreLaberinto){
 		administrador.crearLaberinto(nombreLaberinto)
 	}
