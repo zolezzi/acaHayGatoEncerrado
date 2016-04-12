@@ -4,7 +4,7 @@ import java.util.ArrayList
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
-
+import static org.uqbar.commons.model.ObservableUtils.*
 
 @Observable
 @Accessors
@@ -29,6 +29,10 @@ class Laberinto {
 		  }
 }
 
+	def agregarHabitacion(Habitacion habitacion){
+		habitaciones.add(habitacion)
+		firePropertyChanged(this, "habitaciones")
+	}
 	
 	def esUnLaberintoValido(String nombreLaberinto) {
 		!nombreLaberinto.empty && !nombreLaberinto.toCharArray.get(0).equals(" ")
