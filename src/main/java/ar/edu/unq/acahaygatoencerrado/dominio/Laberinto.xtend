@@ -34,6 +34,11 @@ class Laberinto {
 		firePropertyChanged(this, "habitaciones")
 	}
 	
+	def quitarHabitacion(Habitacion habitacion) {
+		habitaciones.remove(habitacion)
+		firePropertyChanged(this, "habitaciones")
+	}
+	
 	def esUnLaberintoValido(String nombreLaberinto) {
 		!nombreLaberinto.empty && !nombreLaberinto.toCharArray.get(0).equals(" ")
 	}

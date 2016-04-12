@@ -26,7 +26,7 @@ class AdministradorSistema {
 	}
 	
 	def eliminarHabitacion(Laberinto laberinto, Habitacion habitacion) {
-		laberinto.habitaciones.remove(habitacion)
+		laberinto.quitarHabitacion(habitacion)
 	}
 
 	def marcarHabitacionComoFinal(Habitacion habitacion) {

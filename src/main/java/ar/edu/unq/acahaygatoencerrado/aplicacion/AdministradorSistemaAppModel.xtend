@@ -35,11 +35,10 @@ class AdministradorSistemaAppModel {
 	def getHabitacionesDelLaberintoSeleccionado(){
 		return laberintoSeleccionado.habitaciones
 	}
-	
-	
+
+
 	def quitarHabitacion(){
 		administrador.eliminarHabitacion(laberintoSeleccionado, habitacionSeleccionada)
-		//habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado	
 	}
 	
 	
