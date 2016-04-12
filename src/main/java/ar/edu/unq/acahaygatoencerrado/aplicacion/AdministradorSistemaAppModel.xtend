@@ -36,20 +36,12 @@ class AdministradorSistemaAppModel {
 		return laberintoSeleccionado.habitaciones
 	}
 	
-	def agregarHabitacion(String nombreHabitacion){
-		administrador.agregarHabitacion(laberintoSeleccionado, nombreHabitacion)
-		//habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado
-	}
 	
 	def quitarHabitacion(){
 		administrador.eliminarHabitacion(laberintoSeleccionado, habitacionSeleccionada)
 		//habitacionesDelLaberintoSeleccionado = getHabitacionesDelLaberintoSeleccionado	
 	}
 	
-	def setHabitacionSeleccionada(Habitacion habitacion){
-		habitacionSeleccionada = habitacion
-		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
-	}
 	
 	def getEsHabitacionInicial(){
 		return habitacionSeleccionada.esInicial
