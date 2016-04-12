@@ -63,8 +63,8 @@ class TestLaberinto {
 	def testDadoUnLaberintoQueTieneUnaHabitacionInicialYDosHabitacionesMasLeConsultoSiLaInicialEsLaSeteada(){
 		
 		administrador.marcarHabitacionComoInicial(habitacionInicial)
-		administrador.agregarHabitacion(laberinto, "Baño")
-		administrador.agregarHabitacion(laberinto, "Pieza")
+		administrador.agregarHabitacion(laberinto, new Habitacion("Baño"))
+		administrador.agregarHabitacion(laberinto, new Habitacion("Pieza"))
 		laberinto.habitaciones.add(habitacionInicial)
 		
 		Assert.assertEquals(laberinto.habitacionInicial, habitacionInicial)
