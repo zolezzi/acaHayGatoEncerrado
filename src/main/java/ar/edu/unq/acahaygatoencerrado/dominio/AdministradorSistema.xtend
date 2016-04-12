@@ -21,8 +21,9 @@ class AdministradorSistema {
 		firePropertyChanged(this, "laberintos")	
 	}
 	
-	def agregarHabitacion(Laberinto laberinto, String nombreHabitacion) {
-		laberinto.habitaciones.add(new Habitacion(nombreHabitacion))	
+	def agregarHabitacion(Laberinto laberinto, Habitacion habitacion) {
+		laberinto.habitaciones.add(habitacion)	
+		firePropertyChanged(this, "habitaciones")	
 	}
 	
 	def eliminarHabitacion(Laberinto laberinto, Habitacion habitacion) {

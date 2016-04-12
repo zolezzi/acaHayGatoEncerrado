@@ -23,6 +23,11 @@ class Habitacion {
 			throw new Exception("Nombre de Habitacion invalido")
 		  }
 }
+	
+	new() {
+		esFinal = false
+		esInicial = false
+	}
 
 	
 	def esUnaHabitacionValida(String nombreHabitacion) {
