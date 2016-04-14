@@ -83,11 +83,7 @@ class AdministradorSistemaAppModel {
 		administrador.eliminarAccion(laberintoSeleccionado,habitacionSeleccionada,accionSeleccionada)
 		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
 	}
-	
-	def setAccionSeleccionada(Accion accion){
-		accionSeleccionada = accion
-	}
-	
+
 	def getHabitacionesALaCualIr(){
 		laberintoSeleccionado.habitaciones
 	}
