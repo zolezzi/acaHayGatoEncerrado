@@ -8,7 +8,7 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Accion
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
-import static org.uqbar.commons.model.ObservableUtils.*
+//import static org.uqbar.commons.model.ObservableUtils.*
 
 @Observable
 @Accessors

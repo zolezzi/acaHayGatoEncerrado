@@ -5,6 +5,7 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
 import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
 import org.eclipse.xtend.lib.annotations.Accessors
 
+
 @Accessors
 class CrearAccionAppModel {
 	
