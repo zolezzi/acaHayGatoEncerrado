@@ -20,7 +20,7 @@ class CrearAccionDeUsarUnItemAppModel {
 		laberinto = model.laberintoSeleccionado
 		habitacion = model.habitacionSeleccionada
 		itemRequeridoParaUsar = new Item
-//		itemsAgarrables = laberinto.getItemsAgarrables
+		itemsAgarrables = laberinto.getItemsAgarrables
 	}
 	
 	def agregarAccion() {
