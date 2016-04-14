@@ -6,6 +6,7 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Item
 import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List
+import ar.edu.unq.acahaygatoencerrado.dominio.Accion
 
 @Observable
 @Accessors
@@ -15,14 +16,15 @@ class CrearAccionDeUsarUnItemAppModel {
 	Habitacion habitacion
 	Item itemRequeridoParaUsar
 	List<Item> itemsAgarrables
+	Accion accionARealizarAlUsarElItem
 	
-	new(CrearAccionAppModel model) {
+	new (CrearAccionAppModel model) {
 		laberinto = model.laberintoSeleccionado
 		habitacion = model.habitacionSeleccionada
 		itemRequeridoParaUsar = new Item
 		itemsAgarrables = laberinto.getItemsAgarrables
 	}
-	
+
 	def agregarAccion() {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
