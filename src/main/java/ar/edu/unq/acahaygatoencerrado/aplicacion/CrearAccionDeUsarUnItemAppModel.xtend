@@ -17,8 +17,10 @@ class CrearAccionDeUsarUnItemAppModel {
 	Item itemRequeridoParaUsar
 	List<Item> itemsAgarrables
 	Accion accionARealizarAlUsarElItem
+	CrearAccionAppModel appModel
 	
 	new (CrearAccionAppModel model) {
+		appModel = model
 		laberinto = model.laberintoSeleccionado
 		habitacion = model.habitacionSeleccionada
 		itemRequeridoParaUsar = new Item
