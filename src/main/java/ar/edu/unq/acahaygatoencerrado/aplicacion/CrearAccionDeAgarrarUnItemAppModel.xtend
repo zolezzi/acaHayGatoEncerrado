@@ -4,6 +4,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
 import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
+import ar.edu.unq.acahaygatoencerrado.dominio.Item
 
 @Accessors
 
@@ -13,12 +14,18 @@ class CrearAccionDeAgarrarUnItemAppModel {
 	AdministradorSistema administrador
 	Habitacion habitacionSeleccionada
 	String nombreItem
+	Item itemNuevo
 	
 
 	new(CrearAccionAppModel model) {
 		administrador = model.administrador
 		laberintoSeleccionado = model.laberintoSeleccionado
 		habitacionSeleccionada = model.habitacionSeleccionada
+		itemNuevo = new Item()
+	}
+	
+	def agregarItem() {
+		administrador.crearAccionDeAgarrarUnElemento(laberintoSeleccionado, habitacionSeleccionada, nombreItem)
 	}
 	
 }
