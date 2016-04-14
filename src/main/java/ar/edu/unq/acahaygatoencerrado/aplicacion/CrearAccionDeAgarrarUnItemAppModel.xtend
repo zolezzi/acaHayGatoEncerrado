@@ -12,6 +12,7 @@ class CrearAccionDeAgarrarUnItemAppModel {
 	Laberinto laberintoSeleccionado
 	AdministradorSistema administrador
 	Habitacion habitacionSeleccionada
+	String nombreItem
 	
 
 	new(CrearAccionAppModel model) {
