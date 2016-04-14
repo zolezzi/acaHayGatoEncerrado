@@ -50,7 +50,7 @@ class AdministradorSistema {
 	}
 	
 	def crearAccionDeAgarrarUnElemento(Laberinto laberinto, Habitacion habitacion, String nombreItem) {
-		habitacion.acciones.add(new AccionDeAgarrarUnItem(nombreItem))	
+		habitacion.acciones.add(new AccionDeAgarrarUnItem(nombreItem))
 	}
 
 	def crearAccionDeUsarItem(Laberinto laberinto, Habitacion habitacion, Item item, Accion accion) {

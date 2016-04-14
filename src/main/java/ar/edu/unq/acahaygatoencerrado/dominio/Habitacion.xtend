@@ -33,4 +33,5 @@ class Habitacion {
 	def esUnaHabitacionValida(String nombreHabitacion) {
 		!nombreHabitacion.empty && !nombreHabitacion.toCharArray.get(0).equals(" ")
 	}
+	
 }
