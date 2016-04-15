@@ -10,8 +10,8 @@ import org.uqbar.commons.utils.Observable
 class Habitacion {
 	
 	String nombre
-	Boolean esFinal
-	Boolean esInicial
+	Boolean esInicial = false
+	Boolean esFinal  = false
 	List<Accion> acciones = new ArrayList<Accion>
 	
 	new (String nombre){
@@ -25,8 +25,8 @@ class Habitacion {
 }
 	
 	new() {
-		esFinal = false
-		esInicial = false
+		esInicial = !esFinal && true
+		esFinal = !esInicial && true	
 	}
 
 	
