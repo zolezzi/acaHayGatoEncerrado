@@ -92,4 +92,24 @@ class Laberinto {
 		}
 		return count == 1
 	}
+	
+	def getItemsAgarrables() {
+		
+		var List<Item> todosLosItemsAgarrablesDeUnLaberinto = new ArrayList<Item>
+		
+		for(accion : this.todasMisAcciones){
+			todosLosItemsAgarrablesDeUnLaberinto.add(accion.itemAgarrable())
+		}
+		todosLosItemsAgarrablesDeUnLaberinto
+	}
+	
+	private def todasMisAcciones(){
+		
+		var List<Accion> todasLasAccionesDeUnLaberinto = new ArrayList<Accion>
+		
+		for(habitacion : habitaciones){
+			todasLasAccionesDeUnLaberinto.addAll(habitacion.acciones)
+		}
+		todasLasAccionesDeUnLaberinto
+	}
 }

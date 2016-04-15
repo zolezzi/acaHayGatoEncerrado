@@ -8,7 +8,7 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Accion
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
-import static org.uqbar.commons.model.ObservableUtils.*
+//import static org.uqbar.commons.model.ObservableUtils.*
 
 @Observable
 @Accessors
@@ -81,43 +81,9 @@ class AdministradorSistemaAppModel {
 	
 	def quitarAccion(){
 		administrador.eliminarAccion(laberintoSeleccionado,habitacionSeleccionada,accionSeleccionada)
-		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
 	}
-	
-	def setAccionSeleccionada(Accion accion){
-		accionSeleccionada = accion
-	}
-	
+
 	def getHabitacionesALaCualIr(){
 		laberintoSeleccionado.habitaciones
-	}
-	
-	def getItemsQuePuedenSerUsados(){
-
-		var todasLasHabitacionesDeUnLaberinto = laberintoSeleccionado.habitaciones
-		
-		todosLosItemsAgarrablesDeUnLaberinto
-			(todasLasAccionesDelLaberintoSeleccionado(todasLasHabitacionesDeUnLaberinto)
-			)
-	}
-	
-	private def todosLosItemsAgarrablesDeUnLaberinto(List<Accion> acciones){
-		
-		var List<Item> todosLosItemsAgarrablesDeUnLaberinto
-		
-		for(accion : acciones){
-			todosLosItemsAgarrablesDeUnLaberinto.add(accion.itemAgarrable())
-		}
-		todosLosItemsAgarrablesDeUnLaberinto
-	}
-	
-	private def todasLasAccionesDelLaberintoSeleccionado(List<Habitacion> habitaciones){
-		
-		var List<Accion> todasLasAccionesDeUnLaberinto
-		
-		for(habitacion : habitaciones){
-			todasLasAccionesDeUnLaberinto.addAll(habitacion.acciones)
-		}
-		todasLasAccionesDeUnLaberinto
 	}
 }
