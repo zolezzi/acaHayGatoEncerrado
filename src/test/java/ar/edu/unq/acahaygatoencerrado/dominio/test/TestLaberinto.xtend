@@ -16,8 +16,7 @@ class TestLaberinto {
 	Habitacion habitacionInicial
 	Habitacion habitacionFinal
 	AdministradorSistema administrador
-	
-	
+
 	@Before
 	def void setUp(){
 		
@@ -26,9 +25,7 @@ class TestLaberinto {
 		habitacionFinal = new Habitacion("Patio")
 		administrador = new AdministradorSistema
 	}
-	
-	
-		
+
 	@Rule
 	public ExpectedException thrown = ExpectedException.none()
 	
@@ -44,32 +41,4 @@ class TestLaberinto {
 		
 		Assert.assertFalse(laberinto.estaDisponible)
 	}
-	
-	@Test
-	def testLaberintoConUnaHabitacionInicialYUnaFinalEstaDisponible(){
-		
-		administrador.marcarHabitacionComoFinal(habitacionFinal)
-		administrador.marcarHabitacionComoInicial(habitacionInicial)
-		
-		laberinto.habitaciones.add(habitacionInicial)
-		laberinto.habitaciones.add(habitacionFinal)
-
-		administrador.habilitar(laberinto)
-				
-		Assert.assertTrue(laberinto.estaDisponible)
-	}
-	
-	@Test
-	def testDadoUnLaberintoQueTieneUnaHabitacionInicialYDosHabitacionesMasLeConsultoSiLaInicialEsLaSeteada(){
-		
-		administrador.marcarHabitacionComoInicial(habitacionInicial)
-		administrador.agregarHabitacion(laberinto, new Habitacion("Baño"))
-		administrador.agregarHabitacion(laberinto, new Habitacion("Pieza"))
-		laberinto.habitaciones.add(habitacionInicial)
-		
-		Assert.assertEquals(laberinto.habitacionInicial, habitacionInicial)
-		Assert.assertTrue(laberinto.chequearInicio)
-	}
-
-
 }

@@ -7,11 +7,13 @@ import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List
 import ar.edu.unq.acahaygatoencerrado.dominio.Accion
+import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 
 @Observable
 @Accessors
 class CrearAccionDeUsarUnItemAppModel {
 	
+	AdministradorSistema administrador
 	Laberinto laberinto
 	Habitacion habitacion
 	Item itemRequeridoParaUsar
@@ -21,6 +23,7 @@ class CrearAccionDeUsarUnItemAppModel {
 	
 	new (CrearAccionAppModel model) {
 		appModel = model
+		administrador = model.administrador
 		laberinto = model.laberintoSeleccionado
 		habitacion = model.habitacionSeleccionada
 		itemRequeridoParaUsar = new Item
@@ -28,6 +31,6 @@ class CrearAccionDeUsarUnItemAppModel {
 	}
 
 	def agregarAccion() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		administrador.crearAccionDeUsarItem(laberinto,habitacion,itemRequeridoParaUsar,accionARealizarAlUsarElItem)
 	}
 }

@@ -5,10 +5,8 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
 import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 import ar.edu.unq.acahaygatoencerrado.dominio.Item
 import ar.edu.unq.acahaygatoencerrado.dominio.Accion
-import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
-//import static org.uqbar.commons.model.ObservableUtils.*
 
 @Observable
 @Accessors
@@ -23,6 +21,7 @@ class AdministradorSistemaAppModel {
 	Accion accionSeleccionada
 	
 	new (){	}
+	
 	def agregar(String nombreLaberinto){
 		administrador.crearLaberinto(nombreLaberinto)
 	}
@@ -70,13 +69,6 @@ class AdministradorSistemaAppModel {
 											itemSeleccionadoParaAgregarAccion, 
 											accionSeleccionadaParaAgregarAccion)
 		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada	
-	}
-	def marcarHabitacionComoInicial(){
-		administrador.marcarHabitacionComoInicial(habitacionSeleccionada)
-	}
-	
-	def marcarHabitacionComoFinal(){
-		administrador.marcarHabitacionComoFinal(habitacionSeleccionada)
 	}
 	
 	def quitarAccion(){

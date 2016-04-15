@@ -29,18 +29,6 @@ class AdministradorSistema {
 		laberinto.quitarHabitacion(habitacion)
 	}
 
-	def marcarHabitacionComoFinal(Habitacion habitacion) {
-		if(!habitacion.esInicial) {
-			habitacion.esFinal = !habitacion.esFinal
-		}
-	}
-
-	def marcarHabitacionComoInicial(Habitacion habitacion) {
-		if(!habitacion.esFinal) {
-			habitacion.esInicial = ! habitacion.esInicial
-		}
-	}
-
 	def habilitar(Laberinto laberinto) {
 		laberinto.chequearInicioYFinal
 	}

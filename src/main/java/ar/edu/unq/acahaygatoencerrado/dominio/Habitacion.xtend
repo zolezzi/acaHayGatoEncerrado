@@ -11,27 +11,22 @@ class Habitacion {
 	
 	String nombre
 	Boolean esInicial = false
-	Boolean esFinal  = false
+	Boolean esFinal = false
 	List<Accion> acciones = new ArrayList<Accion>
 	
 	new (String nombre){
 		if(esUnaHabitacionValida(nombre)){
 			this.nombre = nombre
-			esFinal = false
-			esInicial = false
 		} else{
 			throw new Exception("Nombre de Habitacion invalido")
 		  }
 }
 	
 	new() {
-		esInicial = !esFinal && true
-		esFinal = !esInicial && true	
+			
 	}
 
-	
 	def esUnaHabitacionValida(String nombreHabitacion) {
 		!nombreHabitacion.empty && !nombreHabitacion.toCharArray.get(0).equals(" ")
 	}
-	
 }
