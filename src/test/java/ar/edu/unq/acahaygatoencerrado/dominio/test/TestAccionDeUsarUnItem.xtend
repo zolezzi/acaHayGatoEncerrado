@@ -19,6 +19,7 @@ class TestAccionDeUsarUnItem {
 	
 	AccionDeAgarrarUnItem agarrarMotosierra
 	Item motosierra
+	Item lenha
 	AccionDeAgarrarUnItem agarrarLenha
 	Habitacion patioDelVecino
 	AccionDeIrHabitacion irAlPatioDelVecino
@@ -30,6 +31,7 @@ class TestAccionDeUsarUnItem {
 		agarrarMotosierra = new AccionDeAgarrarUnItem ("Motosierra")
 		motosierra = agarrarMotosierra.itemAgarrable()
 		agarrarLenha = new AccionDeAgarrarUnItem ("Leña")
+		lenha = agarrarLenha.itemAgarrable()
 		
 		patioDelVecino = new Habitacion ("Patio del Vecino")
 		irAlPatioDelVecino = new AccionDeIrHabitacion (patioDelVecino)
@@ -40,8 +42,8 @@ class TestAccionDeUsarUnItem {
 		]
 		agarrarMotosierra.accionar(jugador)
 		
-		usarMotosierraParaIrAlPatioDelVecino = new AccionDeUsarUnItem(motosierra, irAlPatioDelVecino)
-		usarMotosierraParaAgarrarLenha = new AccionDeUsarUnItem(motosierra, agarrarLenha)
+		usarMotosierraParaIrAlPatioDelVecino = new AccionDeUsarUnItem(motosierra, patioDelVecino)
+		usarMotosierraParaAgarrarLenha = new AccionDeUsarUnItem(motosierra, lenha)
 	}
 	
 	@Test
@@ -53,7 +55,7 @@ class TestAccionDeUsarUnItem {
 	@Test
 	def testNombreDeAccionDeUsarUnItemParaAgarrarOtroItem(){
 		
-		Assert.assertEquals(usarMotosierraParaAgarrarLenha.nombre,"Usar Motosierra para Agarrar Leña")
+		Assert.assertEquals(usarMotosierraParaAgarrarLenha.nombre,"Usar Motosierra para obtener Leña")
 	}
 	
 	@Test
@@ -80,4 +82,3 @@ class TestAccionDeUsarUnItem {
 		Assert.assertTrue(jugador.inventario.items.contains(agarrarLenha.itemAgarrable()))
 	}
 }
-	

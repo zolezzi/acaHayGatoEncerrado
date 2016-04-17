@@ -41,8 +41,12 @@ class AdministradorSistema {
 		habitacion.acciones.add(new AccionDeAgarrarUnItem(nombreItem))
 	}
 
-	def crearAccionDeUsarItem(Laberinto laberinto, Habitacion habitacion, Item item, Accion accion) {
-		habitacion.acciones.add(new AccionDeUsarUnItem(item, accion))
+	def crearAccionDeUsarItem(Laberinto laberinto, Habitacion habitacion, Item item, Item otroItem) {
+		habitacion.acciones.add(new AccionDeUsarUnItem(item, otroItem))
+	}
+	
+	def crearAccionDeUsarItem(Laberinto laberinto, Habitacion habitacion, Item item, Habitacion habitacionALaCualIr) {
+		habitacion.acciones.add(new AccionDeUsarUnItem(item, habitacionALaCualIr))
 	}
 	
 	def eliminarAccion(Laberinto laberinto, Habitacion habitacion, Accion accion) {

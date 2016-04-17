@@ -1,13 +1,12 @@
 package ar.edu.unq.acahaygatoencerrado.aplicacion
 
-import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
+import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
 import ar.edu.unq.acahaygatoencerrado.dominio.Item
-import org.uqbar.commons.utils.Observable
-import org.eclipse.xtend.lib.annotations.Accessors
+import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
 import java.util.List
-import ar.edu.unq.acahaygatoencerrado.dominio.Accion
-import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
 @Observable
 @Accessors
@@ -18,19 +17,26 @@ class CrearAccionDeUsarUnItemAppModel {
 	Habitacion habitacion
 	Item itemRequeridoParaUsar
 	List<Item> itemsAgarrables
-	Accion accionARealizarAlUsarElItem
-	CrearAccionAppModel appModel
+	List<Habitacion> habitacionesALasCualesIr
+	
+	Item itemAObtener
+	Habitacion habitacionALaCualIr
 	
 	new (CrearAccionAppModel model) {
-		appModel = model
+
 		administrador = model.administrador
 		laberinto = model.laberintoSeleccionado
 		habitacion = model.habitacionSeleccionada
-		itemRequeridoParaUsar = new Item
 		itemsAgarrables = laberinto.getItemsAgarrables
+		habitacionesALasCualesIr = laberinto.getHabitaciones
+		itemAObtener = new Item
 	}
 
-	def agregarAccion() {
-		administrador.crearAccionDeUsarItem(laberinto,habitacion,itemRequeridoParaUsar,accionARealizarAlUsarElItem)
+	def agregarAccionDeObtenerOtroItem() {
+		administrador.crearAccionDeUsarItem(laberinto,habitacion,itemRequeridoParaUsar,itemAObtener)
+	}
+	
+	def agregarAccionDeIrAOtraHabitacion() {
+		administrador.crearAccionDeUsarItem(laberinto,habitacion,itemRequeridoParaUsar,habitacionALaCualIr)
 	}
 }

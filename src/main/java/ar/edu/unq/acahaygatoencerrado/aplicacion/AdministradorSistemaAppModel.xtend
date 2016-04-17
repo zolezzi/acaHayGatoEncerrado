@@ -64,13 +64,6 @@ class AdministradorSistemaAppModel {
 		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada		
 	}
 	
-	def agregarAccionDeUsarUnItemALaHabitacionSeleccionada(){
-		administrador.crearAccionDeUsarItem(laberintoSeleccionado, habitacionSeleccionada, 
-											itemSeleccionadoParaAgregarAccion, 
-											accionSeleccionadaParaAgregarAccion)
-		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada	
-	}
-	
 	def quitarAccion(){
 		administrador.eliminarAccion(laberintoSeleccionado,habitacionSeleccionada,accionSeleccionada)
 	}
