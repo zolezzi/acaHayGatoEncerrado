@@ -22,7 +22,7 @@ class AdministradorSistemaAppModel {
 	Accion accionSeleccionada
 	
 	List<String> caracteristicasPosibles = #["es Neutral", "es Inicial", "es Final"]
-	
+
 	new (){	}
 	
 	def agregar(String nombreLaberinto){
