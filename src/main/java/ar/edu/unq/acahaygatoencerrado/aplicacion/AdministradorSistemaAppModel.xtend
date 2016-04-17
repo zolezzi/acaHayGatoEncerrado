@@ -7,6 +7,7 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Item
 import ar.edu.unq.acahaygatoencerrado.dominio.Accion
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
+import java.util.List
 
 @Observable
 @Accessors
@@ -19,6 +20,8 @@ class AdministradorSistemaAppModel {
 	Item itemSeleccionadoParaAgregarAccion
 	Accion accionSeleccionadaParaAgregarAccion
 	Accion accionSeleccionada
+	
+	List<String> caracteristicasPosibles = #["es Neutral", "es Inicial", "es Final"]
 	
 	new (){	}
 	

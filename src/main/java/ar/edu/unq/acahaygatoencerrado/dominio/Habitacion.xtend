@@ -10,8 +10,7 @@ import org.uqbar.commons.utils.Observable
 class Habitacion {
 	
 	String nombre
-	Boolean esInicial = false
-	Boolean esFinal = false
+	String caracteristica = "es Neutral"
 	List<Accion> acciones = new ArrayList<Accion>
 	
 	new (String nombre){
@@ -28,5 +27,17 @@ class Habitacion {
 
 	def esUnaHabitacionValida(String nombreHabitacion) {
 		!nombreHabitacion.empty && !nombreHabitacion.toCharArray.get(0).equals(" ")
+	}
+	
+	def esInicial() {
+		caracteristica == "es Inicial"
+	}
+	
+	def esFinal() {
+		caracteristica == "es Final"
+	}
+	
+	def esNeutral() {
+		!esInicial && !esFinal 
 	}
 }
