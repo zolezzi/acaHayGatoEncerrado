@@ -30,7 +30,13 @@ class AdministradorSistema {
 	}
 
 	def habilitar(Laberinto laberinto) {
-		laberinto.chequearInicioYFinal
+		if(laberinto.chequearInicioYFinal){
+			laberinto.habilitarme
+		}
+	}
+	
+	def deshabilitar(Laberinto laberinto) {
+		laberinto.deshabilitarme
 	}
 	
 	def crearAccionDeIrAOtraHabitacion (Laberinto laberinto, Habitacion habitacionActual, Habitacion habitacionAlaQueMeDirijo) {	

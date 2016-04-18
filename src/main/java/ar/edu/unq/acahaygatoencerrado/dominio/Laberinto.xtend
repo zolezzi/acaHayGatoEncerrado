@@ -112,4 +112,14 @@ class Laberinto {
 		}
 		todasLasAccionesDeUnLaberinto
 	}
+	
+	def habilitarme() {
+		nombre.concat(" - Habilitado")
+		firePropertyChanged(this, "nombre")
+	}
+	
+	def deshabilitarme() {
+		nombre.replace(" - Habilitado", "")
+		firePropertyChanged(this, "nombre")
+	}
 }
