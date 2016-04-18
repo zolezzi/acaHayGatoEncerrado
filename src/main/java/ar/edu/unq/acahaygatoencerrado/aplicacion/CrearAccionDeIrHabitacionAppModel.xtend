@@ -23,11 +23,9 @@ class CrearAccionDeIrHabitacionAppModel {
 		laberintoSeleccionado = model.laberintoSeleccionado
 		habitacionSeleccionada = model.habitacionSeleccionada	
 		habitacionesLaberintoSeleccionado = model.laberintoSeleccionado.habitaciones
-		
 	}
 	
 	def agregarHabitacion (){
 		administrador.crearAccionDeIrAOtraHabitacion(laberintoSeleccionado, habitacionSeleccionada, habitacionALaCualIr)
 	}
-	
 }

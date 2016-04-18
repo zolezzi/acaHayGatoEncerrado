@@ -59,12 +59,10 @@ class AdministradorSistemaAppModel {
 	def agregarAccionDeIrAHabitacionALaHabitacionSeleccionada(){
 		administrador.crearAccionDeIrAOtraHabitacion(laberintoSeleccionado, habitacionSeleccionada, 
 													 habitacionParaAgregarAccion)
-		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada
 	}
 	
 	def agregarAccionDeAgarrarUnElemntoAHabitacionSeleccionada(String nombreItem){
 		administrador.crearAccionDeAgarrarUnElemento(laberintoSeleccionado, habitacionSeleccionada, nombreItem)
-		//accionesDeLaHabitacionSeleccionada = getAccionesDeHabitacionSeleccionada		
 	}
 	
 	def quitarAccion(){

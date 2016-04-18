@@ -8,6 +8,7 @@ import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 @Observable
 @Accessors
 class CrearLaberintoAppModel {
+	
 	Laberinto laberinto
 	AdministradorSistema administrador
 	String nombreLaberinto
@@ -21,6 +22,4 @@ class CrearLaberintoAppModel {
 		laberinto.nombre = nombreLaberinto
 		administrador.agregarLaberinto(laberinto)
 	}
-	
-	
 }

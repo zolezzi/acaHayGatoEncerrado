@@ -29,5 +29,4 @@ class CrearAccionDeAgarrarUnItemAppModel {
 	def agregarItem() {
 		administrador.crearAccionDeAgarrarUnElemento(laberintoSeleccionado, habitacionSeleccionada, nombreItem)
 	}
-	
 }
