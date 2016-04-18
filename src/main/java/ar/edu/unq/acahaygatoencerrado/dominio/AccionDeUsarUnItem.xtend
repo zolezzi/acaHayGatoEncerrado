@@ -21,21 +21,6 @@ class AccionDeUsarUnItem extends Accion {
 	override accionar(Jugador jugador) {
 		if(jugador.tiene(item)){
 			jugador.quitar(item)
-//			this.accionarAux(jugador)
 		}
 	}
-/*	
-	def accionarAux(Jugador jugador) {
-		if(nombre.contains("Agarrar")){
-			jugador.inventario.agregar(accion.itemAgarrable())
-		} else {
-			jugador.habitacionActual.acciones.add(accion)
-		}
-		jugador.habitacionActual.acciones.remove(this)
-	}
-	
-	override itemAgarrable(){
-		accion.itemAgarrable()
-	}
-*/
 }
