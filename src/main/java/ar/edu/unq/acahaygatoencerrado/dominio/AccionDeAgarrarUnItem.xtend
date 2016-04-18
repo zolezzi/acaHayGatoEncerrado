@@ -14,7 +14,6 @@ class AccionDeAgarrarUnItem extends Accion{
 		}else{
 			throw new Exception("Nombre de Item invalido")
 		}
-		
 	}
 	
 	def esUnNombreValido(String nombreItem) {

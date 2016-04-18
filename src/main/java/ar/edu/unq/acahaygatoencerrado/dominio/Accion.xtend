@@ -12,5 +12,7 @@ abstract class Accion {
 
 	def void accionar(Jugador jugador)
 	
-	def Collection<Item> itemAgarrable(){#[]}
+	def Collection<Item> itemAgarrable(){
+		#[]
+	}
 }

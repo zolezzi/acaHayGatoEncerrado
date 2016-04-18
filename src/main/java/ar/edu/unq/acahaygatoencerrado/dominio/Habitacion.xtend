@@ -16,10 +16,10 @@ class Habitacion {
 	new (String nombre){
 		if(esUnaHabitacionValida(nombre)){
 			this.nombre = nombre
-		} else{
+		} else {
 			throw new Exception("Nombre de Habitacion invalido")
-		  }
-}
+		}
+	}
 	
 	new() {
 			

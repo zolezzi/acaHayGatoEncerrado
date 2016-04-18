@@ -47,4 +47,3 @@ class Jugador {
 		}
 	}
 }
-

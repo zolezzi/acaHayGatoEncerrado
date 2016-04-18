@@ -18,16 +18,15 @@ class Laberinto {
 	new (){
 		this.disponibilidad = false
 	}
-	
-	
+
 	new (String nombre){
 		if(esUnLaberintoValido(nombre)){
 			this.nombre = nombre
 			this.disponibilidad = false
-		} else{
+		} else {
 			throw new Exception("Nombre de Laberinto invalido")
-		  }
-}
+		}
+	}
 
 	def agregarHabitacion(Habitacion habitacion){
 		habitaciones.add(habitacion)

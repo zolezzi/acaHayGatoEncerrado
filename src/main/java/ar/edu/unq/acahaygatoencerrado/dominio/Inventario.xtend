@@ -8,7 +8,6 @@ import org.eclipse.xtend.lib.annotations.Accessors
 class Inventario {
 	List<Item> items = new  ArrayList<Item>()
 	
-	
 	def agregar(Item item){
 		if(this.chequearEspacioDisponible){
 			items.add(item)
@@ -21,6 +20,5 @@ class Inventario {
 
 	def quitar(Item item){
 		items.remove(item)
-	}
-	
+	}	
 }

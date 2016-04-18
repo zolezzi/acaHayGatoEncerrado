@@ -1,7 +1,7 @@
 package ar.edu.unq.acahaygatoencerrado.dominio
 
-
 class AccionDeUsarUnItem extends Accion {
+	
 	Item item
 	Item otroItem
 	Habitacion habitacionALaCualIr
