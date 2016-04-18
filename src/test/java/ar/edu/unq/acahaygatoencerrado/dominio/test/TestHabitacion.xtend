@@ -21,14 +21,6 @@ class TestHabitacion {
 		thrown.expectMessage("Nombre de Habitacion invalido") 
 	}
 
-/* 	@Test (expected = Exception)
-	def testHabitacionConUnNombreQueEmpiezaConUnEspacio(){
-		
-		new Habitacion (" Cocina")
-		
-		thrown.expectMessage("Nombre de Habitacion invalido")
-	}
-*/
 	@Test
 	def testHabitacionConUnNombreValido(){
 		

@@ -35,7 +35,7 @@ class testAdministradorSistema {
 	def administradorConUnLaberintoConUnaHabitacion(){
 		
 		this.administradorConUnLaberinto
-		var habitacion = new Habitacion("comnedor")
+		var habitacion = new Habitacion("comedor")
 		administrador.agregarHabitacion(nostromo,habitacion)
 		comedor = nostromo.habitaciones.get(0)
 	}

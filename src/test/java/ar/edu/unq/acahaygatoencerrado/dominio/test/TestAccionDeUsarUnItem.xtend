@@ -49,36 +49,12 @@ class TestAccionDeUsarUnItem {
 	@Test
 	def testNombreDeAccionDeUsarUnItemParaIrAHabitacion(){
 		
-		Assert.assertEquals(usarMotosierraParaIrAlPatioDelVecino.nombre,"Usar Motosierra para Ir a Patio del Vecino")
+		Assert.assertEquals(usarMotosierraParaIrAlPatioDelVecino.nombre,"Usar Motosierra para ir a Patio del Vecino")
 	}
 	
 	@Test
 	def testNombreDeAccionDeUsarUnItemParaAgarrarOtroItem(){
 		
 		Assert.assertEquals(usarMotosierraParaAgarrarLenha.nombre,"Usar Motosierra para obtener Leña")
-	}
-	
-	@Test
-	def testAccionDeUsarUnItemSeAccionaConUnJugadorEntoncesElMismoYaNoTieneEseItemEnSuInventario(){
-		
-		usarMotosierraParaIrAlPatioDelVecino.accionar(jugador)
-		
-		Assert.assertFalse(jugador.tiene(motosierra))
-	}
-	
-	@Test
-	def testAccionDeUsarUnItemParaIrAHabitacionSeAccionaConUnJugadorEntoncesLaHabitacionActualDelMismoEsLaHabitacionDeDestinoDeLaAccion(){
-
-		usarMotosierraParaIrAlPatioDelVecino.accionar(jugador)
-		
-		Assert.assertEquals(jugador.habitacionActual, patioDelVecino)
-	}
-	
-	@Test
-	def testAccionDeUsarUnItemParaAgarrarOtroItemSeAccionaConUnJugadorEntoncesElMismoTieneEnSuInventarioEseOtroItem (){
-		
-		usarMotosierraParaAgarrarLenha.accionar(jugador)
-		
-		Assert.assertTrue(jugador.inventario.items.contains(agarrarLenha.itemAgarrable()))
 	}
 }

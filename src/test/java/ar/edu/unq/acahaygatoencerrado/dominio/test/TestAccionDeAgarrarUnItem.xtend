@@ -51,13 +51,4 @@ class TestAccionDeAgarrarUnItem {
 		
 		Assert.assertEquals(agarrarCuchillo.itemAgarrable().get(0).nombre, "Cuchillo")
 	}
-	
-	@Test
-	def testUnaAccionDeAgarrarUnItemSeAccionaConUnJugadorEntoncesEseItemEstaEnSuInventarioYLaAccionYaNoEstaEnSuHabitacion(){
-		
-		agarrarCuchillo.accionar(jugador)
-		
-		Assert.assertTrue(jugador.inventario.items.contains(agarrarCuchillo.itemAgarrable()))
-		Assert.assertFalse(jugador.habitacionActual.acciones.contains(agarrarCuchillo))
-	}
 }

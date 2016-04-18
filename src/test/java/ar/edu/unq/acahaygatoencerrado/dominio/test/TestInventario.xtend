@@ -58,17 +58,6 @@ class TestInventario {
 	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none()
-	
-	@Test (expected = Exception )
-	def void testInventarioSinEspacioDisponibleAgregaUnItemMasEntoncesDevuelveUnaExcepcion(){
-		
-		this.inventarioLleno
-		
-		inventario.agregar(cosa)
-		
-		thrown.expectMessage("Inventario Lleno. No se puede agarrar Cosa")
-		Assert.assertEquals(inventario.items.size,15)
-	}
 
 	@Test
 	def testInventarioSinEspacioDisponibleQuitaUnItemEntoncesTieneEspacioDisponible(){
