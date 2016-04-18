@@ -29,9 +29,9 @@ class TestAccionDeUsarUnItem {
 	def void setUp(){
 		
 		agarrarMotosierra = new AccionDeAgarrarUnItem ("Motosierra")
-		motosierra = agarrarMotosierra.itemAgarrable()
+		motosierra = agarrarMotosierra.itemAgarrable().get(0)
 		agarrarLenha = new AccionDeAgarrarUnItem ("Leña")
-		lenha = agarrarLenha.itemAgarrable()
+		lenha = agarrarLenha.itemAgarrable().get(0)
 		
 		patioDelVecino = new Habitacion ("Patio del Vecino")
 		irAlPatioDelVecino = new AccionDeIrHabitacion (patioDelVecino)

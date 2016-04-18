@@ -49,7 +49,7 @@ class TestAccionDeAgarrarUnItem {
 	@Test
 	def testAccionDeAgarrarUnItemTieneUnItemAgarrableConElMismoNombreConElQueFueConstruido(){
 		
-		Assert.assertEquals(agarrarCuchillo.itemAgarrable().nombre, "Cuchillo")
+		Assert.assertEquals(agarrarCuchillo.itemAgarrable().get(0).nombre, "Cuchillo")
 	}
 	
 	@Test

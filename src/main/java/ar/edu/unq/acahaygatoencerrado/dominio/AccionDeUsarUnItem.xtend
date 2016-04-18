@@ -23,4 +23,12 @@ class AccionDeUsarUnItem extends Accion {
 			jugador.quitar(item)
 		}
 	}
+	
+	override itemAgarrable(){
+		if(otroItem!=null){
+			return #[otroItem]
+		} else {
+			return #[]
+		}
+	}
 }
