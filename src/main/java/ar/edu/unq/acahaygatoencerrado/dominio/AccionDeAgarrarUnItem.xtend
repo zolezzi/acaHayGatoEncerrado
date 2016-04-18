@@ -27,6 +27,6 @@ class AccionDeAgarrarUnItem extends Accion{
 	}
 	
 	override itemAgarrable() {
-		itemAgarrable
+		#[itemAgarrable]
 	}
 }

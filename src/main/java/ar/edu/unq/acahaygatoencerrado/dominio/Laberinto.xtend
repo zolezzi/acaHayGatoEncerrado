@@ -98,7 +98,7 @@ class Laberinto {
 		var List<Item> todosLosItemsAgarrablesDeUnLaberinto = new ArrayList<Item>
 		
 		for(accion : this.todasMisAcciones){
-			todosLosItemsAgarrablesDeUnLaberinto.add(accion.itemAgarrable())
+			todosLosItemsAgarrablesDeUnLaberinto.addAll(accion.itemAgarrable())
 		}
 		todosLosItemsAgarrablesDeUnLaberinto
 	}
