@@ -24,27 +24,12 @@ class testAdministradorSistema {
 	@Before
 	def void setUp(){
 		
-		administrador = new AdministradorSistema ()
+		administrador = new AdministradorSistema
 	}
 	
 	def administradorConUnLaberinto(){
 		
-		administrador.crearLaberinto("U.S.C.S.S. Nostromo")
-		nostromo = administrador.laberintos.get(0)
-	}
-	def administradorConUnLaberintoConUnaHabitacion(){
-		
-		this.administradorConUnLaberinto
-		var habitacion = new Habitacion("comedor")
-		administrador.agregarHabitacion(nostromo,habitacion)
-		comedor = nostromo.habitaciones.get(0)
-	}
-	def administradorConUnLaberintoConDosHabitaciones(){
-		
-		this.administradorConUnLaberintoConUnaHabitacion
-		var habitacion = new Habitacion("Capsula de Escape")
-		administrador.agregarHabitacion(nostromo,habitacion)
-		capsulaDeEscape = nostromo.habitaciones.get(1)
+		administrador.agregarLaberinto(nostromo)
 	}
 
 	@Test
@@ -63,39 +48,5 @@ class testAdministradorSistema {
 		administrador.eliminarLaberinto(nostromo)
 		
 		Assert.assertTrue(administrador.laberintos.empty)
-	}
-
-	@Test
-	def testAdministradorSistemaConUnLaberintoCreaUnaHabitacionEnElMismoEntoncesElLaberintoTieneUnaHabitacion(){
-		
-		this.administradorConUnLaberintoConUnaHabitacion
-		
-		Assert.assertEquals(nostromo.habitaciones.size,1)
-	}
-	
-	@Test
-	def testAdministradorSistemaConUnLaberintoQueTieneUnaHabitacionCuandoLeAgregaOtraHabitacionMasElLaberintoTieneDosHabitaciones(){
-		
-		this.administradorConUnLaberintoConDosHabitaciones
-		
-		Assert.assertEquals(nostromo.habitaciones.size,2)
-	}
-	
-	@Test
-	def testAdministradorSistemaConUnLaberintoConDosHabitacionesCuandoEliminaUnaDeEllasElLaberintoTieneUnaHabitacion(){
-		
-		this.administradorConUnLaberintoConDosHabitaciones
-		administrador.eliminarHabitacion(nostromo,capsulaDeEscape)
-		
-		Assert.assertEquals(nostromo.habitaciones.size,1)
-	}
-	
-	@Test
-	def testAdministradorSistemaConUnLaberintoConDosHabitacionesHabilitaElLaberintoEntoncesElLaberintoNoEstaDisponible(){
-		
-		this.administradorConUnLaberintoConDosHabitaciones
-		administrador.habilitar(nostromo)
-		
-		Assert.assertFalse(nostromo.estaDisponible)
 	}
 }

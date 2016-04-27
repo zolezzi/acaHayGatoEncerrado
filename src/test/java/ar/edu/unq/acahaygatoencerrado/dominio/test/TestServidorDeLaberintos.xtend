@@ -32,19 +32,18 @@ class TestServidorDeLaberintos {
 		habitacion2 = new Habitacion("Baño")
 		habitacion3 = new Habitacion("Pieza")
 			
-		administrador.agregarHabitacion(laberinto,habitacion1)
-		administrador.agregarHabitacion(laberinto, habitacion2)
-		administrador.agregarHabitacion(laberinto, habitacion3)
+		laberinto.agregarHabitacion(habitacion1)
+		laberinto.agregarHabitacion(habitacion2)
+		laberinto.agregarHabitacion(habitacion3)
 		
 		habitacion1 = new Habitacion("Fosa")
 		habitacion2 = new Habitacion("Pieza")
 		habitacion3 = new Habitacion("Patio")
 		
 		
-		administrador2.agregarHabitacion(laberintoCon3Habitaciones, habitacion1)
-		administrador2.agregarHabitacion(laberintoCon3Habitaciones, habitacion2)
-		administrador2.agregarHabitacion(laberintoCon3Habitaciones, habitacion3)
-	
+		laberintoCon3Habitaciones.agregarHabitacion(habitacion1)
+		laberintoCon3Habitaciones.agregarHabitacion(habitacion2)
+		laberintoCon3Habitaciones.agregarHabitacion(habitacion3)
 	}
 
 	@Test

@@ -16,17 +16,22 @@ class AdministradorSistemaAppModel {
 	AdministradorSistema administrador
 	Laberinto laberintoSeleccionado
 	Habitacion habitacionSeleccionada
-	Habitacion habitacionParaAgregarAccion
-	Item itemSeleccionadoParaAgregarAccion
-	Accion accionSeleccionadaParaAgregarAccion
 	Accion accionSeleccionada
 	
-	List<String> caracteristicasPosibles = #["es Neutral", "es Inicial", "es Final"]
+	Habitacion habitacionParaAgregarAccion
+	
+	
+	Item itemSeleccionadoParaAgregarAccion
+	String nombreItem
+	
+	Accion accionSeleccionadaParaAgregarAccion
+	
+	val caracteristicasPosibles = #["es Neutral", "es Inicial", "es Final"]
 
 	new (){	}
 	
-	def agregar(String nombreLaberinto){
-		administrador.crearLaberinto(nombreLaberinto)
+	def agregarLaberinto(){
+		administrador.agregarLaberinto(laberintoSeleccionado)
 	}
 	
 	def quitarLaberinto(){
@@ -35,12 +40,15 @@ class AdministradorSistemaAppModel {
 	
 	
 	def getHabitacionesDelLaberintoSeleccionado(){
-		return laberintoSeleccionado.habitaciones
+		laberintoSeleccionado.habitaciones
 	}
 
+	def agregarHabitacion(){
+		laberintoSeleccionado.agregarHabitacion(habitacionSeleccionada)
+	}
 
 	def quitarHabitacion(){
-		administrador.eliminarHabitacion(laberintoSeleccionado, habitacionSeleccionada)
+		laberintoSeleccionado.eliminarHabitacion(habitacionSeleccionada)
 	}
 	
 	
@@ -57,19 +65,27 @@ class AdministradorSistemaAppModel {
 	}
 	
 	def agregarAccionDeIrAHabitacionALaHabitacionSeleccionada(){
-		administrador.crearAccionDeIrAOtraHabitacion(laberintoSeleccionado, habitacionSeleccionada, 
-													 habitacionParaAgregarAccion)
+		habitacionSeleccionada.crearAccionDeIrAOtraHabitacion(habitacionParaAgregarAccion)
 	}
 	
-	def agregarAccionDeAgarrarUnElemntoAHabitacionSeleccionada(String nombreItem){
-		administrador.crearAccionDeAgarrarUnElemento(laberintoSeleccionado, habitacionSeleccionada, nombreItem)
+	def agregarAccionDeAgarrarUnElementoAHabitacionSeleccionada(){
+		habitacionSeleccionada.crearAccionDeAgarrarUnElemento(nombreItem)
 	}
 	
 	def quitarAccion(){
-		administrador.eliminarAccion(laberintoSeleccionado,habitacionSeleccionada,accionSeleccionada)
+		habitacionSeleccionada.eliminarAccion(accionSeleccionada)
 	}
 
 	def getHabitacionesALaCualIr(){
 		laberintoSeleccionado.habitaciones
 	}
+	
+	def agregarAccionDeObtenerOtroItem() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	def agregarAccionDeIrAOtraHabitacion() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
 }

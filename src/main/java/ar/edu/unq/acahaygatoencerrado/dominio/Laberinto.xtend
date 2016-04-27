@@ -121,4 +121,8 @@ class Laberinto {
 		nombre.replace(" - Habilitado", "")
 		firePropertyChanged(this, "nombre")
 	}
+	
+	def eliminarHabitacion(Habitacion habitacion) {
+		habitaciones.remove(habitacion)
+	}
 }

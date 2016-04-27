@@ -40,4 +40,16 @@ class Habitacion {
 	def esNeutral() {
 		!esInicial && !esFinal 
 	}
+	
+	def crearAccionDeIrAOtraHabitacion(Habitacion habitacion) {
+		acciones.add(new AccionDeIrHabitacion(habitacion))
+	}
+	
+	def crearAccionDeAgarrarUnElemento(String nombreItem) {
+		acciones.add(new AccionDeAgarrarUnItem(nombreItem))
+	}
+	
+	def eliminarAccion(Accion accion) {
+		acciones.remove(accion)
+	}
 }
