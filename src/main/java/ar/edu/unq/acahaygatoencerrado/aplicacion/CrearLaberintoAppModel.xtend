@@ -11,7 +11,6 @@ class CrearLaberintoAppModel {
 	
 	Laberinto laberinto
 	AdministradorSistema administrador
-	String nombreLaberinto
 	
 	new(AdministradorSistema administrador){
 		this.administrador = administrador
@@ -19,7 +18,6 @@ class CrearLaberintoAppModel {
 	}
 	
 	def agregarLaberinto(){
-		laberinto.nombre = nombreLaberinto
 		administrador.agregarLaberinto(laberinto)
 	}
 }

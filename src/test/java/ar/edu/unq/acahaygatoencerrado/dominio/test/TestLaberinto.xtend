@@ -30,10 +30,10 @@ class TestLaberinto {
 	public ExpectedException thrown = ExpectedException.none()
 	
 	@Test (expected = Exception)
-	def testLaberintoSinNombre(){
+	def testNoSePuedeCrearLaberintoSinNombre(){
 		
 		new Laberinto ("")	
-		thrown.expectMessage("Nombre de Laberinto invalido") 
+		Assert.fail("Nombre de Laberinto invalido") 
 	}
 	
 	@Test

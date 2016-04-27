@@ -21,6 +21,7 @@ class TestJugador {
 	Habitacion otraHabitacion
 	Laberinto laberinto1
 
+
 	
 	
 	@Before

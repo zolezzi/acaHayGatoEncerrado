@@ -2,31 +2,31 @@ package ar.edu.unq.acahaygatoencerrado.dominio
 
 class AccionDeUsarUnItem extends Accion {
 	
-	Item item
-	Item otroItem
+	Item itemNecesario
+	Item resultante
 	Habitacion habitacionALaCualIr
 	
 	new(Item item, Item otroItem) {
 		this.nombre = "Usar " + item.nombre + " para obtener " + otroItem.nombre
-		this.item = item
-		this.otroItem = otroItem
+		this.itemNecesario = item
+		this.resultante = otroItem
 	}
 	
 	new(Item item, Habitacion habitacionALaCualIr) {
 		this.nombre = "Usar " + item.nombre + " para ir a " + habitacionALaCualIr.nombre
-		this.item = item
+		this.itemNecesario = item
 		this.habitacionALaCualIr = habitacionALaCualIr
 	}
 	
 	override accionar(Jugador jugador) {
-		if(jugador.tiene(item)){
-			jugador.quitar(item)
+		if(jugador.tiene(itemNecesario)){
+			jugador.quitar(itemNecesario)
 		}
 	}
 	
 	override itemAgarrable(){
-		if(otroItem!=null){
-			return #[otroItem]
+		if(resultante!=null){
+			return #[resultante]
 		} else {
 			return #[]
 		}
