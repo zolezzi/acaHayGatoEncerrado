@@ -52,4 +52,12 @@ class Habitacion {
 	def eliminarAccion(Accion accion) {
 		acciones.remove(accion)
 	}
+	
+	def crearAccionDeUsarUnItem(Item itemAUsar, Habitacion habitacionALaCualIr) {
+		acciones.add(new AccionDeUsarUnItem(itemAUsar, habitacionALaCualIr))
+	}
+	
+	def crearAccionDeUsarUnItem(Item itemAUsar, Item itemNuevo) {
+		acciones.add(new AccionDeUsarUnItem(itemAUsar, itemNuevo))
+	}
 }

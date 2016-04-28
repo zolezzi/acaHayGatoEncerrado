@@ -7,7 +7,6 @@ import ar.edu.unq.acahaygatoencerrado.dominio.Item
 import ar.edu.unq.acahaygatoencerrado.dominio.Accion
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
-import java.util.List
 
 @Observable
 @Accessors
@@ -15,14 +14,21 @@ class AdministradorSistemaAppModel {
 	
 	AdministradorSistema administrador
 	Laberinto laberintoSeleccionado
+	String nombreLaberinto
+	
 	Habitacion habitacionSeleccionada
+	String nombreHabitacion
+	
+	Habitacion habitacionALaCualIr
+	
 	Accion accionSeleccionada
 	
 	Habitacion habitacionParaAgregarAccion
-	
-	
-	Item itemSeleccionadoParaAgregarAccion
+
+	Item itemSeleccionadoParaUsar
 	String nombreItem
+	Item itemAObtener
+	String nombreItemNuevo
 	
 	Accion accionSeleccionadaParaAgregarAccion
 	
@@ -31,6 +37,9 @@ class AdministradorSistemaAppModel {
 	new (){	}
 	
 	def agregarLaberinto(){
+		laberintoSeleccionado = new Laberinto => [
+			nombre = nombreLaberinto
+		]
 		administrador.agregarLaberinto(laberintoSeleccionado)
 	}
 	
@@ -44,9 +53,12 @@ class AdministradorSistemaAppModel {
 	}
 
 	def agregarHabitacion(){
+		habitacionSeleccionada = new Habitacion => [
+			nombre = nombreHabitacion
+		]
 		laberintoSeleccionado.agregarHabitacion(habitacionSeleccionada)
 	}
-
+	
 	def quitarHabitacion(){
 		laberintoSeleccionado.eliminarHabitacion(habitacionSeleccionada)
 	}
@@ -65,11 +77,20 @@ class AdministradorSistemaAppModel {
 	}
 	
 	def agregarAccionDeIrAHabitacionALaHabitacionSeleccionada(){
-		habitacionSeleccionada.crearAccionDeIrAOtraHabitacion(habitacionParaAgregarAccion)
+		habitacionSeleccionada.crearAccionDeIrAOtraHabitacion(habitacionALaCualIr)
 	}
 	
 	def agregarAccionDeAgarrarUnElementoAHabitacionSeleccionada(){
 		habitacionSeleccionada.crearAccionDeAgarrarUnElemento(nombreItem)
+	}
+	
+	def agregarAccionDeUsarUnItemEIrAOtraHabitacionAHabitacionSeleccionada(){
+		habitacionSeleccionada.crearAccionDeUsarUnItem(itemSeleccionadoParaUsar, habitacionALaCualIr)
+	}
+	
+	def agregarAccionDeUsarUnItemYObtenerOtroItemAHabitacionSeleccionada(){
+		itemAObtener = new Item => [ nombre = nombreItemNuevo ]
+		habitacionSeleccionada.crearAccionDeUsarUnItem(itemSeleccionadoParaUsar, itemAObtener)
 	}
 	
 	def quitarAccion(){
@@ -80,12 +101,7 @@ class AdministradorSistemaAppModel {
 		laberintoSeleccionado.habitaciones
 	}
 	
-	def agregarAccionDeObtenerOtroItem() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	def getItemsAgarrables(){
+		return laberintoSeleccionado.itemsAgarrables
 	}
-	
-	def agregarAccionDeIrAOtraHabitacion() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-	
 }
