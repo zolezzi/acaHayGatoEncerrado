@@ -5,7 +5,6 @@ import org.uqbar.commons.utils.Observable
 
 @Observable
 @Accessors
-class Item {
-	
-	String nombre
+class Item extends Seleccionable{
+
 }

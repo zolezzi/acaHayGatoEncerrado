@@ -3,13 +3,13 @@ package ar.edu.unq.acahaygatoencerrado.dominio
 class AccionDeUsarUnItem extends Accion {
 	
 	Item itemNecesario
-	Item resultante
+	Item itemResultante
 	Habitacion habitacionALaCualIr
 	
 	new(Item item, Item otroItem) {
 		this.nombre = "Usar " + item.nombre + " para obtener " + otroItem.nombre
 		this.itemNecesario = item
-		this.resultante = otroItem
+		this.itemResultante = otroItem
 	}
 	
 	new(Item item, Habitacion habitacionALaCualIr) {
@@ -25,8 +25,8 @@ class AccionDeUsarUnItem extends Accion {
 	}
 	
 	override itemAgarrable(){
-		if(resultante!=null){
-			return #[resultante]
+		if(itemResultante!=null){
+			return #[itemResultante]
 		} else {
 			return #[]
 		}

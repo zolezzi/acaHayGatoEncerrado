@@ -6,9 +6,7 @@ import java.util.Collection
 
 @Observable
 @Accessors
-abstract class Accion {
-	
- 	String nombre
+abstract class Accion extends Seleccionable{
 
 	def void accionar(Jugador jugador)
 	

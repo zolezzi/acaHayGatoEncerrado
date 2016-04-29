@@ -7,9 +7,8 @@ import org.uqbar.commons.utils.Observable
 
 @Observable
 @Accessors
-class Habitacion {
-	
-	String nombre
+class Habitacion extends Seleccionable{
+
 	String caracteristica = "es Neutral"
 	List<Accion> acciones = new ArrayList<Accion>
 	

@@ -8,12 +8,13 @@ import static org.uqbar.commons.model.ObservableUtils.*
 
 @Observable
 @Accessors
-class Laberinto {
+class Laberinto extends Seleccionable{
 	
 	public List<Habitacion> habitaciones = new ArrayList<Habitacion>
-	String nombre
 	Boolean disponibilidad
 	Jugador jugadorActual
+	public Habitacion habitacionInicial
+	public Habitacion habitacionFinal
 	
 	new (){
 		this.disponibilidad = false
@@ -50,16 +51,6 @@ class Laberinto {
 		jugadorActual = jugador
 		disponibilidad = false
 		jugadorActual.setHabitacionInicial(this.getHabitacionInicial())	
-	}
-	
-	def getHabitacionInicial(){
-		var Habitacion habitacionInicial
-		for(habitacion  : habitaciones){
-			if(habitacion.esInicial){
-				habitacionInicial = habitacion
-			}
-		}
-		return habitacionInicial
 	}
 	
 	def chequearInicioYFinal() {
