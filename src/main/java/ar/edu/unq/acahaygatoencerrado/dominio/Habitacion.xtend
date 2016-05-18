@@ -9,7 +9,7 @@ import org.uqbar.commons.utils.Observable
 @Accessors
 class Habitacion extends Seleccionable{
 
-	String caracteristica = "es Neutral"
+//	String caracteristica = "es Neutral"
 	List<Accion> acciones = new ArrayList<Accion>
 	
 	new (String nombre){
@@ -27,19 +27,7 @@ class Habitacion extends Seleccionable{
 	def esUnaHabitacionValida(String nombreHabitacion) {
 		!nombreHabitacion.empty && !nombreHabitacion.toCharArray.get(0).equals(" ")
 	}
-	
-	def esInicial() {
-		caracteristica == "es Inicial"
-	}
-	
-	def esFinal() {
-		caracteristica == "es Final"
-	}
-	
-	def esNeutral() {
-		!esInicial && !esFinal 
-	}
-	
+
 	def crearAccionDeIrAOtraHabitacion(Habitacion habitacion) {
 		acciones.add(new AccionDeIrHabitacion(habitacion))
 	}

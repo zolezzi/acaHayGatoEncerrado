@@ -53,7 +53,7 @@ class Laberinto extends Seleccionable{
 		jugadorActual.setHabitacionInicial(this.getHabitacionInicial())	
 	}
 	
-	def chequearInicioYFinal() {
+/*	def chequearInicioYFinal() {
 		var condInicio = false
 		var condFinal = false
 		
@@ -82,7 +82,7 @@ class Laberinto extends Seleccionable{
 		}
 		return count == 1
 	}
-	
+*/
 	def getItemsAgarrables() {
 		
 		var List<Item> todosLosItemsAgarrablesDeUnLaberinto = new ArrayList<Item>
