@@ -1,9 +1,14 @@
 package ar.edu.unq.acahaygatoencerrado.dominio
 
+import com.fasterxml.jackson.annotation.JsonIgnore
+
 class AccionDeUsarUnItem extends Accion {
 	
+	@JsonIgnore
 	Item itemNecesario
+	@JsonIgnore
 	Item itemResultante
+	@JsonIgnore
 	Habitacion habitacionALaCualIr
 	
 	new(Item item, Item otroItem) {

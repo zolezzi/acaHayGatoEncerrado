@@ -1,10 +1,12 @@
 package ar.edu.unq.acahaygatoencerrado.dominio
 
 import org.eclipse.xtend.lib.annotations.Accessors
+import com.fasterxml.jackson.annotation.JsonIgnore
 
 @Accessors
 class AccionDeAgarrarUnItem extends Accion{
 	
+	@JsonIgnore
 	Item itemAgarrable
 	
 	new(String nombreItem) {
