@@ -9,7 +9,6 @@ import org.uqbar.commons.utils.Observable
 @Accessors
 class Habitacion extends Seleccionable{
 
-//	String caracteristica = "es Neutral"
 	List<Accion> acciones = new ArrayList<Accion>
 	
 	new (String nombre){

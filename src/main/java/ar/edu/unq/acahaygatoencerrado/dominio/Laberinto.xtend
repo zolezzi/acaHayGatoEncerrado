@@ -50,42 +50,12 @@ class Laberinto extends Seleccionable{
 		return this.disponibilidad
 	}
 	
-	def inicializarPartida(Jugador jugador) {
+	def void inicializarPartida(Jugador jugador) {
 		jugadorActual = jugador
 		disponibilidad = false
-		jugadorActual.setHabitacionInicial(this.getHabitacionInicial())	
+		jugadorActual.setHabitacionActual(this.getHabitacionInicial())	
 	}
-	
-/*	def chequearInicioYFinal() {
-		var condInicio = false
-		var condFinal = false
-		
-		condInicio = condInicio || this.chequearInicio
-		condFinal = condFinal || this.chequearFinal
-		
-		this.disponibilidad = condInicio && condFinal
-	}
-	
-	def chequearFinal() {
-		var count = 0
-		for(habitacion : habitaciones){
-			if(habitacion.esFinal){
-				count++
-			}
-		}
-		return count == 1
-	}
-	
-	def chequearInicio() {
-		var count = 0
-		for(habitacion : habitaciones){
-			if(habitacion.esInicial){
-				count++
-			}
-		}
-		return count == 1
-	}
-*/
+
 	def getItemsAgarrables() {
 		
 		var List<Item> todosLosItemsAgarrablesDeUnLaberinto = new ArrayList<Item>
@@ -105,17 +75,7 @@ class Laberinto extends Seleccionable{
 		}
 		todasLasAccionesDeUnLaberinto
 	}
-	
-	def habilitarme() {
-		nombre.concat(" - Habilitado")
-		firePropertyChanged(this, "nombre")
-	}
-	
-	def deshabilitarme() {
-		nombre.replace(" - Habilitado", "")
-		firePropertyChanged(this, "nombre")
-	}
-	
+
 	def eliminarHabitacion(Habitacion habitacion) {
 		habitaciones.remove(habitacion)
 	}

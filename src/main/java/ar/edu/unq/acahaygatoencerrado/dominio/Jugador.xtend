@@ -1,28 +1,25 @@
 package ar.edu.unq.acahaygatoencerrado.dominio
 
 import org.eclipse.xtend.lib.annotations.Accessors
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @Accessors
+@JsonIgnoreProperties("acciones")
 class Jugador {
 	
+	String nombre
 	Inventario inventario
-	public ServidorDeLaberintos servidorDeLaberintos
 	Habitacion habitacionActual
-	
-
-	def solicitarLaberintos(){
-		servidorDeLaberintos.getLaberintosDisponibles()
-	}
 	
 	def jugarLaberinto(Laberinto laberinto){
 		inventario = new Inventario
 		laberinto.inicializarPartida(this)		
 	}
 	
-	def setHabitacionInicial(Habitacion habitacion) {
+	def setHabitacionActual(Habitacion habitacion) {
 		habitacionActual = habitacion
 	}
-	
+
 	def getAcciones(){
 		habitacionActual.getAcciones
 	}
