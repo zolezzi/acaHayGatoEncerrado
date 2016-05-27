@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 @Accessors
 class Laberinto extends Seleccionable{
 	
+	String descripcion
 	public List<Habitacion> habitaciones = new ArrayList<Habitacion>
 	Boolean disponibilidad
 	Jugador jugadorActual
