@@ -5,7 +5,6 @@ import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import static org.uqbar.commons.model.ObservableUtils.*
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @Observable
 @Accessors
@@ -15,9 +14,7 @@ class Laberinto extends Seleccionable{
 	public List<Habitacion> habitaciones = new ArrayList<Habitacion>
 	Boolean disponibilidad
 	Jugador jugadorActual
-	@JsonIgnoreProperties("acciones")
 	public Habitacion habitacionInicial
-	@JsonIgnoreProperties("acciones")
 	public Habitacion habitacionFinal
 	
 	new (){
