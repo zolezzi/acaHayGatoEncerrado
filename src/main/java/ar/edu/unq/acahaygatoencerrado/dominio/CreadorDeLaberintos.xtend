@@ -8,7 +8,7 @@ import static org.uqbar.commons.model.ObservableUtils.*
 
 @Observable
 @Accessors
-class AdministradorSistema {
+class CreadorDeLaberintos {
 	
 	List<Laberinto> laberintos = new ArrayList<Laberinto>
 

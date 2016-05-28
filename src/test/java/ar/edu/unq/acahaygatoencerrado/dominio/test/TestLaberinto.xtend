@@ -1,6 +1,5 @@
 package ar.edu.unq.acahaygatoencerrado.dominio.test
 
-
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -8,14 +7,14 @@ import org.junit.Rule
 import org.junit.rules.ExpectedException
 import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
 import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
-import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
+import ar.edu.unq.acahaygatoencerrado.dominio.CreadorDeLaberintos
 
 class TestLaberinto {
 
 	Laberinto laberinto
 	Habitacion habitacionInicial
 	Habitacion habitacionFinal
-	AdministradorSistema administrador
+	CreadorDeLaberintos administrador
 
 	@Before
 	def void setUp(){
@@ -23,7 +22,7 @@ class TestLaberinto {
 		laberinto = new Laberinto("U.S.C.S.S. Nostromo")
 		habitacionInicial = new Habitacion("Cocina")
 		habitacionFinal = new Habitacion("Patio")
-		administrador = new AdministradorSistema
+		administrador = new CreadorDeLaberintos
 	}
 
 	@Rule

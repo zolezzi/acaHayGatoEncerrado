@@ -1,15 +1,15 @@
 package ar.edu.unq.acahaygatoencerrado.aplicacion
 
 import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
-import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
+import ar.edu.unq.acahaygatoencerrado.dominio.CreadorDeLaberintos
 
 @Observable
 @Accessors
 class AdministradorLaberintosAppModel {
 	
-	AdministradorSistema administrador
+	CreadorDeLaberintos administrador
 	Laberinto laberintoSeleccionado
 	String nombreLaberinto
 	

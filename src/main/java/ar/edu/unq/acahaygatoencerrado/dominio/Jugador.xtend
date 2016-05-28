@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 class Jugador {
 	
 	String nombre
+	ServidorDeLaberintos servidorDeLaberintos
 	Inventario inventario
 	Habitacion habitacionActual
 	
@@ -42,5 +43,5 @@ class Jugador {
 				inventario.items.remove(elemento)
 			}
 		}
-	}
+	}	
 }

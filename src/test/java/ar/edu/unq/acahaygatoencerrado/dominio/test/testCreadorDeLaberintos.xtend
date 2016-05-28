@@ -1,7 +1,6 @@
 package ar.edu.unq.acahaygatoencerrado.dominio.test
 
 import ar.edu.unq.acahaygatoencerrado.dominio.Accion
-import ar.edu.unq.acahaygatoencerrado.dominio.AdministradorSistema
 import ar.edu.unq.acahaygatoencerrado.dominio.Habitacion
 import ar.edu.unq.acahaygatoencerrado.dominio.Item
 import ar.edu.unq.acahaygatoencerrado.dominio.Laberinto
@@ -9,11 +8,12 @@ import org.eclipse.xtend.lib.annotations.Accessors
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
+import ar.edu.unq.acahaygatoencerrado.dominio.CreadorDeLaberintos
 
 @Accessors
-class testAdministradorSistema {
+class testCreadorDeLaberintos {
 	
-	AdministradorSistema administrador
+	CreadorDeLaberintos administrador
 	Laberinto nostromo
 	Habitacion comedor
 	Habitacion capsulaDeEscape
@@ -24,7 +24,7 @@ class testAdministradorSistema {
 	@Before
 	def void setUp(){
 		
-		administrador = new AdministradorSistema
+		administrador = new CreadorDeLaberintos
 	}
 	
 	def administradorConUnLaberinto(){
