@@ -32,7 +32,7 @@ class TestInventario {
 	@Test
 	def testInventarioVacioTieneEspacioDisponible(){
 		
-		Assert.assertTrue(inventario.chequearEspacioDisponible)
+		Assert.assertTrue(inventario.hayEspacioDisponible)
 		Assert.assertEquals(inventario.items.size,0)
 	}
 	
@@ -43,7 +43,7 @@ class TestInventario {
 			inventario.agregar(cosa)
 		}
 		
-		Assert.assertTrue(inventario.chequearEspacioDisponible)
+		Assert.assertTrue(inventario.hayEspacioDisponible)
 		Assert.assertEquals(inventario.items.size,10)
 	}
 	
@@ -52,7 +52,7 @@ class TestInventario {
 		
 		this.inventarioLleno
 		
-		Assert.assertFalse(inventario.chequearEspacioDisponible)
+		Assert.assertFalse(inventario.hayEspacioDisponible)
 		Assert.assertEquals(inventario.items.size,15)
 	}
 	
@@ -66,7 +66,7 @@ class TestInventario {
 		
 		inventario.quitar(cosa)
 		
-		Assert.assertTrue(inventario.chequearEspacioDisponible)
+		Assert.assertTrue(inventario.hayEspacioDisponible)
 		Assert.assertEquals(inventario.items.size,14)
 	}
 }

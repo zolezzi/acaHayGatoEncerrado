@@ -11,14 +11,14 @@ import static org.uqbar.commons.model.ObservableUtils.*
 class Laberinto extends Seleccionable{
 	
 	String descripcion
-	public List<Habitacion> habitaciones = new ArrayList<Habitacion>
 	Boolean disponibilidad
-	Jugador jugadorActual
+	public List<Habitacion> habitaciones
 	public Habitacion habitacionInicial
 	public Habitacion habitacionFinal
 	
 	new (){
-		this.disponibilidad = false
+		disponibilidad = false
+		habitaciones = new ArrayList<Habitacion>
 	}
 
 	new (String nombre){
@@ -49,9 +49,8 @@ class Laberinto extends Seleccionable{
 	}
 	
 	def void inicializarPartida(Jugador jugador) {
-		jugadorActual = jugador
 		disponibilidad = false
-		jugadorActual.setHabitacionActual(this.getHabitacionInicial())	
+		jugador.setHabitacionActual(this.getHabitacionInicial())	
 	}
 
 	def getItemsAgarrables() {

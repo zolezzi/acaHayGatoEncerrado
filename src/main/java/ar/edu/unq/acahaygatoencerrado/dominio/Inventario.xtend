@@ -9,12 +9,12 @@ class Inventario {
 	List<Item> items = new  ArrayList<Item>()
 	
 	def agregar(Item item){
-		if(this.chequearEspacioDisponible){
+		if(this.hayEspacioDisponible){
 			items.add(item)
 		}	
 	} 
 	
-	def chequearEspacioDisponible(){
+	def hayEspacioDisponible(){
 		items.size() < 15
 	}
 
