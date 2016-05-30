@@ -145,7 +145,8 @@ class DummyData {
 			
 			nombre = "UNQui"
 			descripcion = "Estás estudiando para ser un gran programador, pero tenés un maquiavélico parcial" +
-			" dentro de unas horas. Estás en el API, con tu PC y todos los test te siguen fallando. " +
+			" en el Aula 60 dentro de unas horas. Estás en el API, con tu PC y todos los test te siguen" +
+			" fallando. " +
 			"Y encima estás en silla de ruedas por herir tu columna de tanto cargar la notebook de" +
 			" acá para allá. Tenés que prepararte, rendirlo bien y salir orgulloso de tu sapienza." +
 			"¿Vas a llegar?"
@@ -164,7 +165,8 @@ class DummyData {
 				it.setHabitacionInicial(habitaciones.get(0))
 				//API es la habitacionInicial
 				it.setHabitacionFinal(habitaciones.get(8),"Ahora sí, ya está... Respirás tranquilo y ya " +
-					"no te importa si te perdés el último tren a casa.")
+					"no te importa si te perdés el último tren a casa... ¿No te habrás olvidado tu" +
+					"Notebook en algún lado, no?")
 				//Patio es la habitacionFinal
 
 			//CREAMOS ACCIONES DE IR A OTRA HABITACION
@@ -193,16 +195,47 @@ class DummyData {
 				habitaciones.get(3).crearAccionDeIrAOtraHabitacion(habitaciones.get(4))
 				//del Aula 37-B puedo ir al Hall de la Planta Baja
 			//CREAMOS ACCIONES DE AGARRAR UN ITEM
-				habitaciones.get(0).crearAccionDeAgarrarUnElemento("Pendrive")
-				//en el API puedo obtener un Pendrive
-				habitaciones.get(0).crearAccionDeAgarrarUnElemento("Notebook")
+				habitaciones.get(0).crearAccionDeAgarrarUnElemento("Pendrive que alguien perdió")
+				//en el API puedo obtener un Pendrive que alguien perdió
+				habitaciones.get(0).crearAccionDeAgarrarUnElemento("Tu Notebook")
 				//en el API puedo obtener una Notebook
 				habitaciones.get(0).crearAccionDeAgarrarUnElemento("Cable de red")
 				//en el API puedo obtener un Cable de red
-			//CREAMOS ACCIONES DE USAR UN ITEM PARA IR A OTRA HABITACION
-			
 			//CREAMOS ACCIONES DE USAR UN ITEM PARA AGARRAR OTRO ITEM
-			
+				habitaciones.get(3).crearAccionDeUsarUnItem(
+					habitaciones.get(0).acciones.get(3).itemAgarrable.get(0),
+					new Item => [ nombre = "Apunte que todavía no leiste"])
+					//en el Aula 37-B puedo usar el Cable de red para obtener el Apunte que todavía no leiste
+				habitaciones.get(7).crearAccionDeUsarUnItem(
+					habitaciones.get(0).acciones.get(1).itemAgarrable.get(0),
+					new Item => [ nombre = "Apuntes viejos de Fidel"])
+					//en la Oficina de TPI y LDS puedo usar el Pendrive que alguien perdió para
+					//obtener Apuntes viejos de Fidel
+				habitaciones.get(0).crearAccionDeUsarUnItem(
+					habitaciones.get(3).acciones.get(1).itemAgarrable.get(0),
+					new Item => [ nombre = "Respuestas a la Primer Mitad del Parcial"])
+					//en el API puedo usar el Apunte que todavía no leiste para obtener Respuestas a la
+					//Primer Mitad del Parcial
+				habitaciones.get(0).crearAccionDeUsarUnItem(
+					habitaciones.get(7).acciones.get(1).itemAgarrable.get(0),
+					new Item => [ nombre = "Respuestas a la Segunda Mitad del Parcial"])
+					//en el API puedo usar los Apuntes viejos de Fidel para obtener Respuestas a la
+					//Segunda Mitad del Parcial
+				habitaciones.get(2).crearAccionDeUsarUnItem(
+					habitaciones.get(0).acciones.get(5).itemAgarrable.get(0),
+					new Item => [ nombre = "Parcial Terminado"])
+					//en el Aula 60 puedo usar las Respuestas a la Segundo Mitad del Parcial para
+					//obtener un Parcial Terminado
+			//CREAMOS ACCIONES DE USAR UN ITEM PARA IR A OTRA HABITACION
+				habitaciones.get(4).crearAccionDeUsarUnItem(
+					habitaciones.get(0).acciones.get(4).itemAgarrable.get(0),
+					habitaciones.get(2))
+					//en la Planta Baja puedo usar las Respuestas a la Primer Mitad del Parcial para
+					//ir al Aula 60
+				habitaciones.get(2).crearAccionDeUsarUnItem(
+					habitaciones.get(2).acciones.get(0).itemAgarrable.get(0),
+					habitaciones.get(8))
+					//en el Aula 60 puedo usar el Parcial Terminado para ir al Patio
 		]
 	}
 
