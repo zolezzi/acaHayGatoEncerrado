@@ -1,46 +1,57 @@
 package ar.edu.unq.acahaygatoencerrado.dominio
 
 import org.eclipse.xtend.lib.annotations.Accessors
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import java.util.List
+import java.util.ArrayList
 
 @Accessors
-@JsonIgnoreProperties("acciones")
 class Jugador {
-	
+
+	Integer id = this.hashCode
 	String nombre
 	Inventario inventario
 	Habitacion habitacionActual
+	List<Accion> accionesDisponibles = new ArrayList<Accion>
 	
 	def jugarLaberinto(Laberinto laberinto){
 		inventario = new Inventario
 		laberinto.inicializarPartida(this)		
 	}
-	
-	def setHabitacionActual(Habitacion habitacion) {
-		habitacionActual = habitacion
-	}
-
-	def getAcciones(){
-		habitacionActual.getAcciones
-	}
 
 	def hacerAccion(Accion accion){
 		accion.accionar(this)
 	}
-	
+
+	def hacerAccion(Integer idAccion){
+		var Accion a
+		for(accion : habitacionActual.acciones){
+			if(accion.id == idAccion){
+				a = accion
+			}
+		}
+		hacerAccion(a)
+		setAccionesDisponibles
+	}
+
 	def cambiarHabitacion(Habitacion habitacion) {
 		this.habitacionActual = habitacion
+		setAccionesDisponibles
 	}
 	
+	def setAccionesDisponibles(){
+		accionesDisponibles = new ArrayList<Accion>
+		for(accion : habitacionActual.acciones){
+			if(accion.estaDisponible(this)){
+				accionesDisponibles.add(accion)
+			}
+		}
+	}
+
 	def tiene(Item item) {
 		return inventario.items.exists[it | it.nombre == item.nombre]
 	}
 	
 	def quitar(Item item) {
-		for(elemento : inventario.items){
-			if(elemento.nombre == item.nombre){
-				inventario.items.remove(elemento)
-			}
-		}
-	}	
+		inventario.items.remove(item)
+	}
 }

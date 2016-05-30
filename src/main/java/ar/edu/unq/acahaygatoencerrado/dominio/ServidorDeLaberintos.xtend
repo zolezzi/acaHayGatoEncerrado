@@ -4,12 +4,14 @@ import java.util.ArrayList
 import java.util.List
 import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @Observable
 @Accessors
 class ServidorDeLaberintos {
 
 	var List<CreadorDeLaberintos> administradores = new ArrayList<CreadorDeLaberintos>
+	var List<Jugador> jugadores = new ArrayList<Jugador>
 
 	def getLaberintos() {
  		var laberintos = new ArrayList<Laberinto>
@@ -21,6 +23,10 @@ class ServidorDeLaberintos {
 
 	def registrar(CreadorDeLaberintos administrador){
 		administradores.add(administrador)
+	}
+	
+	def registrar(Jugador jugador){
+		jugadores.add(jugador)
 	}
 	
 	def habilitarLaberintosQueEstenEnCondicionesDeSerJugados() {
@@ -40,12 +46,22 @@ class ServidorDeLaberintos {
 	}
 	
 	def getLaberinto(Integer idLaberinto) {
-		var Laberinto laberintoQueSeEstaJugando
+		var Laberinto laberintoResultante
 		for(laberinto:getLaberintos){
 			if(laberinto.id == idLaberinto){
-				laberintoQueSeEstaJugando = laberinto
+				laberintoResultante = laberinto
 			}
 		}
-		return laberintoQueSeEstaJugando
+		return laberintoResultante
+	}
+	
+	def getJugador(Integer idJugador) {
+		var Jugador jugadorResultante
+		for(jugador:getJugadores){
+			if(jugador.id == idJugador){
+				jugadorResultante = jugador
+			}
+		}
+		return jugadorResultante
 	}
 }

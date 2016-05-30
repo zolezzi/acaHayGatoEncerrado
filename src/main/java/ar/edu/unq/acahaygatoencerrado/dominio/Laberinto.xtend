@@ -5,16 +5,19 @@ import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import static org.uqbar.commons.model.ObservableUtils.*
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @Observable
 @Accessors
+@JsonIgnoreProperties("habitaciones","habitacionInicial","habitacionFinal","ganadores","itemsAgarrables")
 class Laberinto extends Seleccionable{
 	
 	String descripcion
 	Boolean disponibilidad
-	public List<Habitacion> habitaciones
-	public Habitacion habitacionInicial
-	public Habitacion habitacionFinal
+	List<Habitacion> habitaciones
+	Habitacion habitacionInicial
+	Habitacion habitacionFinal
+	List<Integer> ganadores = new ArrayList<Integer>
 	
 	new (){
 		disponibilidad = false
@@ -50,7 +53,7 @@ class Laberinto extends Seleccionable{
 	
 	def void inicializarPartida(Jugador jugador) {
 		disponibilidad = false
-		jugador.setHabitacionActual(this.getHabitacionInicial())	
+		jugador.cambiarHabitacion(this.getHabitacionInicial())	
 	}
 
 	def getItemsAgarrables() {
@@ -75,5 +78,22 @@ class Laberinto extends Seleccionable{
 
 	def eliminarHabitacion(Habitacion habitacion) {
 		habitaciones.remove(habitacion)
+	}
+	
+	def setHabitacionInicial(Habitacion habitacion) {
+		habitacionInicial = habitacion
+	}
+	
+	def setHabitacionFinal(Habitacion habitacion, String mensajeJuegoGanado) {
+		habitacionFinal = habitacion
+		habitacionFinal.setDescripcion(mensajeJuegoGanado)
+	}
+	
+	def agregarGanador(Integer idJugador){
+		ganadores.add(idJugador)
+	}
+	
+	def fuiGanadoPor(Integer idJugador){
+		ganadores.contains(idJugador)
 	}
 }

@@ -24,16 +24,26 @@ class AccionDeUsarUnItem extends Accion {
 	}
 	
 	override accionar(Jugador jugador) {
-		if(jugador.tiene(itemNecesario)){
-			jugador.quitar(itemNecesario)
+		jugador.quitar(itemNecesario)
+		if(itemResultante!=null){
+			jugador.inventario.agregar(itemResultante)
+			jugador.habitacionActual.acciones.remove(this)
+		} else {
+			jugador.habitacionActual.crearAccionDeIrAOtraHabitacion(habitacionALaCualIr)
+			jugador.habitacionActual.acciones.remove(this)
+			jugador.cambiarHabitacion(habitacionALaCualIr)
 		}
 	}
-	
+
 	override itemAgarrable(){
 		if(itemResultante!=null){
 			return #[itemResultante]
 		} else {
 			return #[]
 		}
+	}
+	
+	override estaDisponible(Jugador jugador){
+		jugador.tiene(itemNecesario)
 	}
 }

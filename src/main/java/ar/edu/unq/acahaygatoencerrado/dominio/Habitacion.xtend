@@ -10,6 +10,7 @@ import org.uqbar.commons.utils.Observable
 class Habitacion extends Seleccionable{
 
 	List<Accion> acciones = new ArrayList<Accion>
+	String descripcion
 	
 	new (String nombre){
 		if(esUnaHabitacionValida(nombre)){

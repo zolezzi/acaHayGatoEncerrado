@@ -31,15 +31,7 @@ class TestJugador {
 		
 		Assert.assertEquals(jugador.habitacionActual.nombre, "Cocina")
 	}
-	
-	@Test
-	def testDadoUnJugadorConSuHabitacionActualPreguntoCuantasAccionesTieneRetorna0(){
-		habitacion = new Habitacion("Comedor")
-		jugador.habitacionActual = habitacion
-	
-		Assert.assertEquals(jugador.acciones.size, 0)
-	}
-	
+
 		@Test
 	def testDadoUnJugadorQueTieneComoHabitacionActualLaCocinaLeCambioLaHabitacionAComedor(){
 		habitacion = new Habitacion("Cocina")

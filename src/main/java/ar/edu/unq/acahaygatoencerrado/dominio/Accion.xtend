@@ -13,4 +13,8 @@ abstract class Accion extends Seleccionable{
 	def Collection<Item> itemAgarrable(){
 		#[]
 	}
+	
+	def boolean estaDisponible(Jugador jugador){
+		true
+	}
 }
