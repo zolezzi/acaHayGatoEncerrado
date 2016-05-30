@@ -24,7 +24,7 @@ class AccionDeUsarUnItem extends Accion {
 	}
 	
 	override accionar(Jugador jugador) {
-		jugador.quitar(itemNecesario)
+		jugador.quitar(itemNecesario.id)
 		if(itemResultante!=null){
 			jugador.inventario.agregar(itemResultante)
 			jugador.habitacionActual.acciones.remove(this)

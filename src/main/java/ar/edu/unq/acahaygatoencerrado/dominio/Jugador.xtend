@@ -51,7 +51,8 @@ class Jugador {
 		return inventario.items.exists[it | it.nombre == item.nombre]
 	}
 	
-	def quitar(Item item) {
-		inventario.items.remove(item)
+	def quitar(Integer idItem) {
+		inventario.quitar(idItem)
+		setAccionesDisponibles
 	}
 }

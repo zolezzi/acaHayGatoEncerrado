@@ -18,7 +18,13 @@ class Inventario {
 		items.size() < 15
 	}
 
-	def quitar(Item item){
-		items.remove(item)
+	def quitar(Integer idItem){
+		var Item itemAEliminar
+		for(item : items){
+			if(item.id == idItem){
+				itemAEliminar = item
+			}
+		}
+		items.remove(itemAEliminar)
 	}	
 }

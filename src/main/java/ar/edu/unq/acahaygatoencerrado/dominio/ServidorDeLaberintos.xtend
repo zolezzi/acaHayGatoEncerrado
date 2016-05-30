@@ -55,13 +55,7 @@ class ServidorDeLaberintos {
 		return laberintoResultante
 	}
 	
-	def getJugador(Integer idJugador) {
-		var Jugador jugadorResultante
-		for(jugador:getJugadores){
-			if(jugador.id == idJugador){
-				jugadorResultante = jugador
-			}
-		}
-		return jugadorResultante
+	def getJugador() {
+		return jugadores.get(0)
 	}
 }

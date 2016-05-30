@@ -64,7 +64,7 @@ class TestInventario {
 		
 		this.inventarioLleno
 		
-		inventario.quitar(cosa)
+		inventario.quitar(cosa.id)
 		
 		Assert.assertTrue(inventario.hayEspacioDisponible)
 		Assert.assertEquals(inventario.items.size,14)
