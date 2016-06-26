@@ -14,6 +14,7 @@ class Laberinto extends Seleccionable{
 	
 	String descripcion
 	Boolean disponibilidad
+	Boolean enJuego
 	List<Habitacion> habitaciones
 	Habitacion habitacionInicial
 	Habitacion habitacionFinal
@@ -21,6 +22,7 @@ class Laberinto extends Seleccionable{
 	
 	new (){
 		disponibilidad = false
+		enJuego = false
 		habitaciones = new ArrayList<Habitacion>
 	}
 
@@ -28,6 +30,7 @@ class Laberinto extends Seleccionable{
 		if(esUnLaberintoValido(nombre)){
 			this.nombre = nombre
 			this.disponibilidad = false
+			this.enJuego = false
 		} else {
 			throw new Exception("Nombre de Laberinto invalido")
 		}
@@ -51,8 +54,13 @@ class Laberinto extends Seleccionable{
 		return this.disponibilidad
 	}
 	
+	def estaEnJuego() {
+		return this.enJuego
+	}
+	
 	def void inicializarPartida(Jugador jugador) {
 		disponibilidad = false
+		enJuego = true
 		jugador.cambiarHabitacion(this.getHabitacionInicial())	
 	}
 
